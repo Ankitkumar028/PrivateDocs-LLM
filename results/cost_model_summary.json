@@ -1,0 +1,146 @@
+{
+  "self_hosted_params": {
+    "hourly_gpu_rate_usd": 1.99,
+    "tokens_per_second": 450.0,
+    "cost_per_million_tokens_usd": 1.2284,
+    "fixed_daily_gpu_cost_usd": 47.76,
+    "fixed_monthly_gpu_cost_usd": 1432.8
+  },
+  "volume_comparisons": [
+    {
+      "daily_tokens": 100000,
+      "monthly_tokens": 3000000,
+      "self_hosted_monthly_usd": 1432.8,
+      "cloud_apis": {
+        "openai/gpt-4o": {
+          "monthly_cost_usd": 13.12,
+          "self_hosted_savings_usd": -1419.67,
+          "cheaper_option": "cloud_api"
+        },
+        "openai/gpt-4o-mini": {
+          "monthly_cost_usd": 0.79,
+          "self_hosted_savings_usd": -1432.01,
+          "cheaper_option": "cloud_api"
+        },
+        "anthropic/claude-3-5-sonnet": {
+          "monthly_cost_usd": 18.0,
+          "self_hosted_savings_usd": -1414.8,
+          "cheaper_option": "cloud_api"
+        },
+        "anthropic/claude-3-5-haiku": {
+          "monthly_cost_usd": 4.8,
+          "self_hosted_savings_usd": -1428.0,
+          "cheaper_option": "cloud_api"
+        }
+      }
+    },
+    {
+      "daily_tokens": 500000,
+      "monthly_tokens": 15000000,
+      "self_hosted_monthly_usd": 1432.8,
+      "cloud_apis": {
+        "openai/gpt-4o": {
+          "monthly_cost_usd": 65.62,
+          "self_hosted_savings_usd": -1367.17,
+          "cheaper_option": "cloud_api"
+        },
+        "openai/gpt-4o-mini": {
+          "monthly_cost_usd": 3.94,
+          "self_hosted_savings_usd": -1428.86,
+          "cheaper_option": "cloud_api"
+        },
+        "anthropic/claude-3-5-sonnet": {
+          "monthly_cost_usd": 90.0,
+          "self_hosted_savings_usd": -1342.8,
+          "cheaper_option": "cloud_api"
+        },
+        "anthropic/claude-3-5-haiku": {
+          "monthly_cost_usd": 24.0,
+          "self_hosted_savings_usd": -1408.8,
+          "cheaper_option": "cloud_api"
+        }
+      }
+    },
+    {
+      "daily_tokens": 2000000,
+      "monthly_tokens": 60000000,
+      "self_hosted_monthly_usd": 1432.8,
+      "cloud_apis": {
+        "openai/gpt-4o": {
+          "monthly_cost_usd": 262.5,
+          "self_hosted_savings_usd": -1170.3,
+          "cheaper_option": "cloud_api"
+        },
+        "openai/gpt-4o-mini": {
+          "monthly_cost_usd": 15.75,
+          "self_hosted_savings_usd": -1417.05,
+          "cheaper_option": "cloud_api"
+        },
+        "anthropic/claude-3-5-sonnet": {
+          "monthly_cost_usd": 360.0,
+          "self_hosted_savings_usd": -1072.8,
+          "cheaper_option": "cloud_api"
+        },
+        "anthropic/claude-3-5-haiku": {
+          "monthly_cost_usd": 96.0,
+          "self_hosted_savings_usd": -1336.8,
+          "cheaper_option": "cloud_api"
+        }
+      }
+    },
+    {
+      "daily_tokens": 10000000,
+      "monthly_tokens": 300000000,
+      "self_hosted_monthly_usd": 1432.8,
+      "cloud_apis": {
+        "openai/gpt-4o": {
+          "monthly_cost_usd": 1312.5,
+          "self_hosted_savings_usd": -120.3,
+          "cheaper_option": "cloud_api"
+        },
+        "openai/gpt-4o-mini": {
+          "monthly_cost_usd": 78.75,
+          "self_hosted_savings_usd": -1354.05,
+          "cheaper_option": "cloud_api"
+        },
+        "anthropic/claude-3-5-sonnet": {
+          "monthly_cost_usd": 1800.0,
+          "self_hosted_savings_usd": 367.2,
+          "cheaper_option": "self_hosted"
+        },
+        "anthropic/claude-3-5-haiku": {
+          "monthly_cost_usd": 480.0,
+          "self_hosted_savings_usd": -952.8,
+          "cheaper_option": "cloud_api"
+        }
+      }
+    },
+    {
+      "daily_tokens": 50000000,
+      "monthly_tokens": 1500000000,
+      "self_hosted_monthly_usd": 1432.8,
+      "cloud_apis": {
+        "openai/gpt-4o": {
+          "monthly_cost_usd": 6562.5,
+          "self_hosted_savings_usd": 5129.7,
+          "cheaper_option": "self_hosted"
+        },
+        "openai/gpt-4o-mini": {
+          "monthly_cost_usd": 393.75,
+          "self_hosted_savings_usd": -1039.05,
+          "cheaper_option": "cloud_api"
+        },
+        "anthropic/claude-3-5-sonnet": {
+          "monthly_cost_usd": 9000.0,
+          "self_hosted_savings_usd": 7567.2,
+          "cheaper_option": "self_hosted"
+        },
+        "anthropic/claude-3-5-haiku": {
+          "monthly_cost_usd": 2400.0,
+          "self_hosted_savings_usd": 967.2,
+          "cheaper_option": "self_hosted"
+        }
+      }
+    }
+  ]
+}

@@ -1,18 +1,62 @@
 documents:
+  # --- SEC EDGAR 10-K Filings (Raw HTML) ---
   - id: sec_apple_10k_2023
     title: "Apple Inc. Form 10-K (Fiscal Year 2023)"
-    url: "https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm"
+    url: "https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm"
     format: html
     category: financial
 
   - id: sec_microsoft_10k_2023
     title: "Microsoft Corporation Form 10-K (Fiscal Year 2023)"
-    url: "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000078901923000032/msft-20230630.htm"
+    url: "https://www.sec.gov/Archives/edgar/data/789019/000095017023035122/msft-20230630.htm"
     format: html
     category: financial
 
-  - id: nist_ai_rmf_1_0
-    title: "NIST AI Risk Management Framework 1.0"
-    url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf"
+  - id: sec_nvidia_10k_2024
+    title: "NVIDIA Corporation Form 10-K (Fiscal Year 2024)"
+    url: "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000029/nvda-20240128.htm"
+    format: html
+    category: financial
+
+  - id: sec_alphabet_10k_2023
+    title: "Alphabet Inc. Form 10-K (Fiscal Year 2023)"
+    url: "https://www.sec.gov/Archives/edgar/data/1652044/000165204424000022/goog-20231231.htm"
+    format: html
+    category: financial
+
+  - id: sec_amazon_10k_2023
+    title: "Amazon.com Inc. Form 10-K (Fiscal Year 2023)"
+    url: "https://www.sec.gov/Archives/edgar/data/1018724/000101872424000008/amzn-20231231.htm"
+    format: html
+    category: financial
+
+  - id: sec_amd_10k_2023
+    title: "Advanced Micro Devices, Inc. Form 10-K (Fiscal Year 2023)"
+    url: "https://www.sec.gov/Archives/edgar/data/2488/000000248824000012/amd-20231230.htm"
+    format: html
+    category: financial
+
+  - id: sec_meta_10k_2023
+    title: "Meta Platforms, Inc. Form 10-K (Fiscal Year 2023)"
+    url: "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000012/meta-20231231.htm"
+    format: html
+    category: financial
+
+  # --- Regulatory & Policy Documents (PDF) ---
+  - id: whitehouse_eo_14110_ai
+    title: "Executive Order 14110: Safe, Secure, and Trustworthy Artificial Intelligence"
+    url: "https://www.govinfo.gov/content/pkg/FR-2023-11-01/pdf/2023-24283.pdf"
+    format: pdf
+    category: policy
+
+  - id: sec_cybersecurity_guidance_2018
+    title: "SEC Statement and Guidance on Public Company Cybersecurity Disclosures"
+    url: "https://www.sec.gov/files/rules/interp/2018/33-10459.pdf"
+    format: pdf
+    category: policy
+
+  - id: sec_cybersecurity_final_rule_2023
+    title: "SEC Final Rule: Cybersecurity Risk Management and Incident Disclosure"
+    url: "https://www.sec.gov/files/rules/final/2023/33-11216.pdf"
     format: pdf
     category: policy

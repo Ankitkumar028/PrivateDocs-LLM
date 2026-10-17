@@ -1,0 +1,314 @@
+{
+  "total_evaluated": 10,
+  "hits_at_1": 9,
+  "hits_at_3": 10,
+  "hits_at_5": 10,
+  "hits_at_10": 10,
+  "recall_at_1": 0.9,
+  "recall_at_3": 1.0,
+  "recall_at_5": 1.0,
+  "recall_at_10": 1.0,
+  "mrr": 0.95,
+  "details": [
+    {
+      "id": "q1_apple_appstore",
+      "question": "What are Apple's stated risk factors concerning its dependence on third-party software developers and the App Store?",
+      "target_doc": "sec_apple_10k_2023",
+      "target_sec": "item 1a - risk factors",
+      "matched_rank": 1,
+      "top_retrievals": [
+        {
+          "doc_id": "sec_apple_10k_2023",
+          "section": "Item 1A - Risk Factors",
+          "page": 0,
+          "score": 0.0325,
+          "snippet": "Apple Inc. | 2023 Form 10-K | 9\nThe Company distributes third-party applications for its products through the App Store."
+        },
+        {
+          "doc_id": "sec_apple_10k_2023",
+          "section": "Item 1A - Risk Factors",
+          "page": 0,
+          "score": 0.0318,
+          "snippet": "The Company believes the availability of third-party software applications and services for its products depends in part"
+        },
+        {
+          "doc_id": "sec_apple_10k_2023",
+          "section": "Item 8 - Financial Statements and Supplementary Data",
+          "page": 0,
+          "score": 0.0308,
+          "snippet": "For the sale of third-party products where the Company obtains control of the product before transferring it to the cust"
+        }
+      ]
+    },
+    {
+      "id": "q2_apple_sales",
+      "question": "What was Apple's total net sales for the fiscal year ended September 30, 2023, broken down by product categories like iPhone and Services?",
+      "target_doc": "sec_apple_10k_2023",
+      "target_sec": "item 7 - management's discussion and analysis of financial condition and results of operations",
+      "matched_rank": 1,
+      "top_retrievals": [
+        {
+          "doc_id": "sec_apple_10k_2023",
+          "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+          "page": 0,
+          "score": 0.0318,
+          "snippet": "Wearables, Home and Accessories (1) | 39,845 | (3) | % | 41,241 | 7 | % | 38,367\nServices (2) | 85,200 | 9 | % | 78,129"
+        },
+        {
+          "doc_id": "sec_apple_10k_2023",
+          "section": "Item 8 - Financial Statements and Supplementary Data",
+          "page": 0,
+          "score": 0.0313,
+          "snippet": "(1) Products net sales include amortization of the deferred value of unspecified software upgrade rights, which are bund"
+        },
+        {
+          "doc_id": "sec_apple_10k_2023",
+          "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+          "page": 0,
+          "score": 0.0308,
+          "snippet": "2023 | Change | 2022 | Change | 2021\nNet sales by reportable segment:\nAmericas | $ | 162,560 | (4) | % | $ | 169,658 | 1"
+        }
+      ]
+    },
+    {
+      "id": "q3_microsoft_ai_azure",
+      "question": "How does Microsoft describe the competitive risks related to AI and cloud infrastructure investments like Azure?",
+      "target_doc": "sec_microsoft_10k_2023",
+      "target_sec": "item 1a - risk factors",
+      "matched_rank": 1,
+      "top_retrievals": [
+        {
+          "doc_id": "sec_microsoft_10k_2023",
+          "section": "Item 1A - Risk Factors",
+          "page": 0,
+          "score": 0.032,
+          "snippet": "The competitive pressures described above may cause decreased sales volumes, price reductions, and/or increased operatin"
+        },
+        {
+          "doc_id": "sec_microsoft_10k_2023",
+          "section": "Item 1 - Business",
+          "page": 0,
+          "score": 0.0313,
+          "snippet": "We have a long-term partnership with OpenAI, a leading AI research and deployment company. We deploy OpenAI\u2019s models acr"
+        },
+        {
+          "doc_id": "sec_microsoft_10k_2023",
+          "section": "Item 1 - Business",
+          "page": 0,
+          "score": 0.0313,
+          "snippet": "Enterprise Services, including Enterprise Support Services, Industry Solutions, and Nuance Professional Services, assist"
+        }
+      ]
+    },
+    {
+      "id": "q4_microsoft_intelligent_cloud",
+      "question": "What are Microsoft's principal product offerings within the Intelligent Cloud segment?",
+      "target_doc": "sec_microsoft_10k_2023",
+      "target_sec": "item 1 - business",
+      "matched_rank": 2,
+      "top_retrievals": [
+        {
+          "doc_id": "sec_microsoft_10k_2023",
+          "section": "Item 8 - Financial Statements and Supplementary Data",
+          "page": 0,
+          "score": 0.0328,
+          "snippet": "\u2022 Office Commercial (Office 365 subscriptions, the Office 365 portion of Microsoft 365 Commercial subscriptions, and Off"
+        },
+        {
+          "doc_id": "sec_microsoft_10k_2023",
+          "section": "Item 1 - Business",
+          "page": 0,
+          "score": 0.0312,
+          "snippet": "Enterprise Services, including Enterprise Support Services, Industry Solutions, and Nuance Professional Services, assist"
+        },
+        {
+          "doc_id": "sec_microsoft_10k_2023",
+          "section": "Item 1 - Business",
+          "page": 0,
+          "score": 0.0299,
+          "snippet": "What We Offer\nFounded in 1975, we develop and support software, services, devices, and solutions that deliver new value"
+        }
+      ]
+    },
+    {
+      "id": "q5_nvidia_china_export",
+      "question": "What does NVIDIA disclose regarding export controls and licensing restrictions affecting GPU sales to China?",
+      "target_doc": "sec_nvidia_10k_2024",
+      "target_sec": "item 1a - risk factors",
+      "matched_rank": 1,
+      "top_retrievals": [
+        {
+          "doc_id": "sec_nvidia_10k_2024",
+          "section": "Item 1A - Risk Factors",
+          "page": 0,
+          "score": 0.0328,
+          "snippet": "Given the increasing strategic importance of AI and rising geopolitical tensions, the USG has changed and may again chan"
+        },
+        {
+          "doc_id": "sec_nvidia_10k_2024",
+          "section": "Item 1A - Risk Factors",
+          "page": 0,
+          "score": 0.0323,
+          "snippet": "During the third quarter of fiscal year 2023, the USG announced export restrictions and export licensing requirements ta"
+        },
+        {
+          "doc_id": "sec_nvidia_10k_2024",
+          "section": "Item 1A - Risk Factors",
+          "page": 0,
+          "score": 0.0313,
+          "snippet": "Following these export controls, we transitioned some operations, including certain testing, validation, and supply and"
+        }
+      ]
+    },
+    {
+      "id": "q6_alphabet_cyber_board",
+      "question": "What does Alphabet state regarding cybersecurity governance and the role of the Board Audit and Compliance Committee?",
+      "target_doc": "sec_alphabet_10k_2023",
+      "target_sec": "item 1c - cybersecurity",
+      "matched_rank": 1,
+      "top_retrievals": [
+        {
+          "doc_id": "sec_alphabet_10k_2023",
+          "section": "Item 1C - Cybersecurity",
+          "page": 0,
+          "score": 0.0325,
+          "snippet": "24.\nTable of Contents | Alphabet Inc.\nsenior management makes the final materiality determinations and disclosure and ot"
+        },
+        {
+          "doc_id": "sec_nvidia_10k_2024",
+          "section": "Item 1C - Cybersecurity",
+          "page": 0,
+          "score": 0.031,
+          "snippet": "Refer to \u201cItem 1A. Risk factors\u201d in this annual report on Form 10-K for additional information about cybersecurity-relat"
+        },
+        {
+          "doc_id": "sec_cybersecurity_final_rule_2023",
+          "section": "page",
+          "page": 70,
+          "score": 0.0294,
+          "snippet": "70 \nrequirement would typically encompass identification of whether a registrant has a chief \ninformation security offic"
+        }
+      ]
+    },
+    {
+      "id": "q7_amazon_seasonality",
+      "question": "How does Amazon characterize seasonality and fulfillment network capacity risks in its retail operations?",
+      "target_doc": "sec_amazon_10k_2023",
+      "target_sec": "item 1a - risk factors",
+      "matched_rank": 1,
+      "top_retrievals": [
+        {
+          "doc_id": "sec_amazon_10k_2023",
+          "section": "Item 1A - Risk Factors",
+          "page": 0,
+          "score": 0.0325,
+          "snippet": "The Variability in Our Retail Business Places Increased Strain on Our Operations\nDemand for our products and services ca"
+        },
+        {
+          "doc_id": "sec_amazon_10k_2023",
+          "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+          "page": 0,
+          "score": 0.032,
+          "snippet": "26\nTable of Contents\nfulfilled, the extent to which third-party sellers utilize Fulfillment by Amazon services, timing o"
+        },
+        {
+          "doc_id": "sec_amazon_10k_2023",
+          "section": "Item 1A - Risk Factors",
+          "page": 0,
+          "score": 0.0317,
+          "snippet": "We Face Risks Related to Successfully Optimizing and Operating Our Fulfillment Network and Data Centers\nFailures to adeq"
+        }
+      ]
+    },
+    {
+      "id": "q8_amd_foundry_tsmc",
+      "question": "What does AMD say about its reliance on third-party foundries like TSMC for manufacturing its semiconductor wafers?",
+      "target_doc": "sec_amd_10k_2023",
+      "target_sec": "item 1a - risk factors",
+      "matched_rank": 1,
+      "top_retrievals": [
+        {
+          "doc_id": "sec_amd_10k_2023",
+          "section": "Item 1A - Risk Factors",
+          "page": 0,
+          "score": 0.0325,
+          "snippet": "Operational and Technology Risks\nWe rely on third parties to manufacture our products, and if they are unable to do so o"
+        },
+        {
+          "doc_id": "sec_amd_10k_2023",
+          "section": "Item 1A - Risk Factors",
+          "page": 0,
+          "score": 0.0325,
+          "snippet": "Failure to achieve expected manufacturing yields for our products could negatively impact our results of operations.\nSem"
+        },
+        {
+          "doc_id": "sec_amd_10k_2023",
+          "section": "Item 1 - Business",
+          "page": 0,
+          "score": 0.0317,
+          "snippet": "We also work with industry leaders on process technology, design tools, intellectual property, software and other indust"
+        }
+      ]
+    },
+    {
+      "id": "q9_sec_rule_4day_deadline",
+      "question": "What is the 4-business-day disclosure deadline for material cybersecurity incidents on Form 8-K under the SEC final rule?",
+      "target_doc": "sec_cybersecurity_final_rule_2023",
+      "target_sec": "item 1.05",
+      "matched_rank": 1,
+      "top_retrievals": [
+        {
+          "doc_id": "sec_cybersecurity_final_rule_2023",
+          "section": "page",
+          "page": 33,
+          "score": 0.0325,
+          "snippet": "33 \ndetails that have the potential to be exploited by threat actors, but rather focuses on the incident\u2019s \nmaterial imp"
+        },
+        {
+          "doc_id": "sec_cybersecurity_final_rule_2023",
+          "section": "page",
+          "page": 182,
+          "score": 0.032,
+          "snippet": "182 \nAppendix C\u2014Form 8-K \nFORM 8-K \n* * * * * \nGENERAL INSTRUCTIONS \n* * * * * \nB. Events to be Reported and Time for Fi"
+        },
+        {
+          "doc_id": "sec_cybersecurity_final_rule_2023",
+          "section": "page",
+          "page": 32,
+          "score": 0.0293,
+          "snippet": "32 \nincident, so information regarding the incident\u2019s impact on the registrant\u2019s financial condition \nand results of ope"
+        }
+      ]
+    },
+    {
+      "id": "q10_whitehouse_eo_redteaming",
+      "question": "What reporting requirements does Executive Order 14110 place on companies developing dual-use foundation models regarding safety test results and red-teaming?",
+      "target_doc": "whitehouse_eo_14110_ai",
+      "target_sec": "section 4.2",
+      "matched_rank": 1,
+      "top_retrievals": [
+        {
+          "doc_id": "whitehouse_eo_14110_ai",
+          "section": "page",
+          "page": 7,
+          "score": 0.0328,
+          "snippet": "75197 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \ndo this work solely fo"
+        },
+        {
+          "doc_id": "whitehouse_eo_14110_ai",
+          "section": "page",
+          "page": 6,
+          "score": 0.0323,
+          "snippet": "and trustworthy AI systems, including: \n(A) developing a companion resource to the AI Risk Management Frame-\nwork, NIST"
+        },
+        {
+          "doc_id": "whitehouse_eo_14110_ai",
+          "section": "page",
+          "page": 7,
+          "score": 0.0295,
+          "snippet": "such as mitigations to improve performance on these red-team tests and \nstrengthen overall model security. Prior to the"
+        }
+      ]
+    }
+  ]
+}
