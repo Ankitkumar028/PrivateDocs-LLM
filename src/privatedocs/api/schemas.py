@@ -16,6 +16,14 @@ class AskRequest(BaseModel):
         default=None,
         description="Retrieval mode override (default: configured RETRIEVAL_MODE)",
     )
+    doc_id: str | None = Field(
+        default=None,
+        description="Optional doc_id or company filter for targeted retrieval",
+    )
+    filter_doc_id: str | None = Field(
+        default=None,
+        description="Alias for doc_id filter",
+    )
     stream: bool = Field(default=False, description="Whether to stream response tokens via SSE")
 
 

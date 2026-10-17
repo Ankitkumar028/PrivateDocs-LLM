@@ -86,6 +86,27 @@ with st.sidebar:
     )
     top_k = st.slider("Top Context Chunks (k)", min_value=1, max_value=10, value=5)
 
+    doc_options = [
+        "All Documents (No Filter)",
+        "sec_apple_10k_2023",
+        "sec_microsoft_10k_2023",
+        "sec_nvidia_10k_2024",
+        "sec_alphabet_10k_2023",
+        "sec_amazon_10k_2023",
+        "sec_amd_10k_2023",
+        "sec_meta_10k_2023",
+        "whitehouse_eo_14110_ai",
+        "sec_cybersecurity_guidance_2018",
+        "sec_cybersecurity_final_rule_2023",
+    ]
+    selected_doc = st.selectbox(
+        "Filter Document / Company",
+        options=doc_options,
+        index=0,
+        help="Restrict retrieval to chunks from a specific document or filing",
+    )
+    filter_doc_id = None if selected_doc.startswith("All Documents") else selected_doc
+
     st.divider()
     st.markdown("**System Health & Observability**")
     try:
@@ -157,6 +178,7 @@ if prompt := st.chat_input("Ask a question about the documents..."):
                 "question": prompt,
                 "top_k": top_k,
                 "mode": retrieval_mode,
+                "doc_id": filter_doc_id,
                 "stream": False,
             }
 

@@ -46,8 +46,13 @@ class BM25Index:
 
         return len(chunks)
 
-    def search(self, query: str, top_k: int = 5) -> list[SearchResult]:
-        """Perform BM25 search and return top-k scored SearchResult objects."""
+    def search(
+        self,
+        query: str,
+        top_k: int = 5,
+        filter_doc_id: str | None = None,
+    ) -> list[SearchResult]:
+        """Perform BM25 search and return top-k scored SearchResult objects with optional doc filtering."""
         if not self.bm25 or not self.chunks:
             return []
 
@@ -65,10 +70,12 @@ class BM25Index:
         )
 
         results: list[SearchResult] = []
-        for idx, score in scored_pairs[:top_k]:
+        for idx, score in scored_pairs:
             if score <= 0.0:
                 continue
             chunk = self.chunks[idx]
+            if filter_doc_id and chunk.doc_id != filter_doc_id:
+                continue
             results.append(
                 SearchResult(
                     chunk_id=chunk.chunk_id,
@@ -81,6 +88,8 @@ class BM25Index:
                     metadata=chunk.metadata,
                 )
             )
+            if len(results) >= top_k:
+                break
 
         return results
 

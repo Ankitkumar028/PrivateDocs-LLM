@@ -8,6 +8,7 @@ import json
 import statistics
 import time
 from pathlib import Path
+import sys
 
 import httpx
 
@@ -132,6 +133,14 @@ def main() -> None:
     parser.add_argument("--warmup", type=int, default=2, help="Number of warm-up requests to exclude")
     parser.add_argument("--out", default=None, help="Output JSON path")
     args = parser.parse_args()
+
+    if args.requests < 50:
+        print(
+            f"\n[WARNING] Only {args.requests} measured requests requested (< 50). "
+            "Load test statistical significance (particularly p95 and p99 tail latencies) "
+            "requires at least 50 measured requests.\n",
+            file=sys.stderr,
+        )
 
     results = asyncio.run(
         run_benchmark(

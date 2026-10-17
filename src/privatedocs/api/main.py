@@ -202,19 +202,20 @@ def _retrieve_chunks(
     question: str,
     top_k: int,
     mode: str,
+    filter_doc_id: str | None = None,
 ) -> tuple[list[SearchResult], float]:
     """Execute dense, sparse, or hybrid retrieval and measure retrieval latency."""
     t0 = time.perf_counter()
 
     if mode == "dense":
         query_vec = services.embedder.embed_query(question)
-        hits = services.vector_store.search(query_vec, top_k=top_k)
+        hits = services.vector_store.search(query_vec, top_k=top_k, filter_doc_id=filter_doc_id)
     elif mode == "bm25":
-        hits = services.bm25.search(question, top_k=top_k)
+        hits = services.bm25.search(question, top_k=top_k, filter_doc_id=filter_doc_id)
     else:  # default 'hybrid'
         query_vec = services.embedder.embed_query(question)
-        dense_hits = services.vector_store.search(query_vec, top_k=top_k * 2)
-        bm25_hits = services.bm25.search(question, top_k=top_k * 2)
+        dense_hits = services.vector_store.search(query_vec, top_k=top_k * 2, filter_doc_id=filter_doc_id)
+        bm25_hits = services.bm25.search(question, top_k=top_k * 2, filter_doc_id=filter_doc_id)
         settings = get_settings()
         hits = hybrid_search(dense_hits, bm25_hits, rrf_k=settings.RRF_K, top_k=top_k)
 
@@ -238,9 +239,10 @@ async def ask(payload: AskRequest) -> Any:
     start_time = time.perf_counter()
     settings = get_settings()
     mode = payload.mode or settings.RETRIEVAL_MODE
+    filter_doc = payload.doc_id or payload.filter_doc_id
 
     # 1. Retrieve relevant chunks
-    hits, _ = _retrieve_chunks(payload.question, payload.top_k, mode)
+    hits, _ = _retrieve_chunks(payload.question, payload.top_k, mode, filter_doc_id=filter_doc)
 
     chunk_dicts = [
         {

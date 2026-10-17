@@ -24,6 +24,7 @@ SCRATCH_DIR="/mnt/scratch/hf_cache"
 sudo mkdir -p "$SCRATCH_DIR"
 sudo chown -R "$USER:$USER" /mnt/scratch || true
 export HF_HOME="$SCRATCH_DIR"
+# VERIFY: Requires `pip install hf_transfer` for high-throughput Rust-based model downloads
 export HF_HUB_ENABLE_HF_TRANSFER=1
 
 # Copy environment file if not present

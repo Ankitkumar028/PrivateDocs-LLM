@@ -3,6 +3,7 @@ set -euo pipefail
 
 MODEL="${1:-meta-llama/Llama-3.1-8B-Instruct}"
 DTYPE="${2:-bfloat16}"
+# VERIFY: Ensure container image tag matches host ROCm driver version
 VLLM_IMAGE="${VLLM_IMAGE:-rocm/vllm:rocm6.2_mi300_ubuntu22.04_py3.10_vllm_0.6.3}"
 SCRATCH_DIR="/mnt/scratch/hf_cache"
 
@@ -27,15 +28,15 @@ docker run -d \
     "$VLLM_IMAGE" \
     python3 -m vllm.entrypoints.openai.api_server \
         --model "$MODEL" \
-        --dtype "$DTYPE" \
+        --dtype "$DTYPE" `# VERIFY: bfloat16 native acceleration on AMD CDNA3 architecture` \
         --port 8000 \
-        --trust-remote-code \
-        --max-model-len 4096 \
-        --gpu-memory-utilization 0.90
+        --trust-remote-code `# VERIFY: required for models with custom tokenizers or modeling code` \
+        --max-model-len 4096 `# VERIFY: verify context length fits within desired batch size and KV cache` \
+        --gpu-memory-utilization 0.90 `# VERIFY: reserve 10% VRAM headroom for PyTorch runtime and ROCm allocations`
 
 echo "Waiting for vLLM to initialize on port 8000..."
 READY=0
-for i in {1..60}; do
+for _ in {1..60}; do
     if curl -s http://localhost:8000/v1/models | grep -q "$MODEL"; then
         READY=1
         break

@@ -28,8 +28,12 @@ logging.basicConfig(
 )
 logger = logging.getLogger("privatedocs.eval.build_corpus")
 
-# SEC fair access compliant User-Agent format: Sample Company Name AdminContact@<sample company domain>.com
-SEC_USER_AGENT = "PrivateDocs-LLM-Evaluation/1.0 (yankitkumara@gmail.com; Confidential-RAG-Research)"
+try:
+    from privatedocs.config import get_settings
+    SEC_USER_AGENT = get_settings().SEC_USER_AGENT
+except Exception:
+    SEC_USER_AGENT = "PrivateDocs-LLM-Evaluation/1.0 (admin@example.com; Research-RAG-Evaluation)"
+
 REQUEST_DELAY_SECONDS = 0.3  # Max ~3.3 req/s, well below the 10 req/s SEC limit
 
 

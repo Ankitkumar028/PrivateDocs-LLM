@@ -19,9 +19,14 @@ python eval/run_answer_eval.py --out "$RESULTS_DIR/answer_eval.json"
 echo "--- Step 2: Running Concurrency Load Tests ---"
 for c in 1 8 32 64; do
     echo "Running load test at concurrency=$c..."
+    # Ensure minimum 50 measured requests for statistical validity (p95/p99 tail latency)
+    NUM_REQS=$((c * 10))
+    if [ "$NUM_REQS" -lt 50 ]; then
+        NUM_REQS=50
+    fi
     python benchmarks/load_test.py \
         --concurrency "$c" \
-        --requests $((c * 10)) \
+        --requests "$NUM_REQS" \
         --out "$RESULTS_DIR/load_c${c}.json"
 done
 

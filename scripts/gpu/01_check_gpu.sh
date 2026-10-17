@@ -23,9 +23,10 @@ fi
 echo "=== 3. Checking Disk Space ==="
 df -h / /mnt/scratch || df -h .
 
-echo "=== 4. Validating Docker GPU Access ==="
+# VERIFY: Confirm active ROCm / vLLM container image tag on Docker Hub for host ROCm driver version
 VLLM_IMAGE="${VLLM_IMAGE:-rocm/vllm:rocm6.2_mi300_ubuntu22.04_py3.10_vllm_0.6.3}"
 echo "Running quick ROCm container check with image: $VLLM_IMAGE"
+# VERIFY: Kernel Fusion Driver (/dev/kfd) and DRI render devices must be mounted for ROCm access
 docker run --rm \
     --device=/dev/kfd \
     --device=/dev/dri \

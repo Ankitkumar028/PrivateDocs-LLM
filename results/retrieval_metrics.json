@@ -1,314 +1,3423 @@
 {
-  "total_evaluated": 10,
-  "hits_at_1": 9,
-  "hits_at_3": 10,
-  "hits_at_5": 10,
-  "hits_at_10": 10,
-  "recall_at_1": 0.9,
-  "recall_at_3": 1.0,
-  "recall_at_5": 1.0,
-  "recall_at_10": 1.0,
-  "mrr": 0.95,
-  "details": [
-    {
-      "id": "q1_apple_appstore",
-      "question": "What are Apple's stated risk factors concerning its dependence on third-party software developers and the App Store?",
-      "target_doc": "sec_apple_10k_2023",
-      "target_sec": "item 1a - risk factors",
-      "matched_rank": 1,
-      "top_retrievals": [
-        {
-          "doc_id": "sec_apple_10k_2023",
-          "section": "Item 1A - Risk Factors",
-          "page": 0,
-          "score": 0.0325,
-          "snippet": "Apple Inc. | 2023 Form 10-K | 9\nThe Company distributes third-party applications for its products through the App Store."
-        },
-        {
-          "doc_id": "sec_apple_10k_2023",
-          "section": "Item 1A - Risk Factors",
-          "page": 0,
-          "score": 0.0318,
-          "snippet": "The Company believes the availability of third-party software applications and services for its products depends in part"
-        },
-        {
-          "doc_id": "sec_apple_10k_2023",
-          "section": "Item 8 - Financial Statements and Supplementary Data",
-          "page": 0,
-          "score": 0.0308,
-          "snippet": "For the sale of third-party products where the Company obtains control of the product before transferring it to the cust"
-        }
-      ]
-    },
-    {
-      "id": "q2_apple_sales",
-      "question": "What was Apple's total net sales for the fiscal year ended September 30, 2023, broken down by product categories like iPhone and Services?",
-      "target_doc": "sec_apple_10k_2023",
-      "target_sec": "item 7 - management's discussion and analysis of financial condition and results of operations",
-      "matched_rank": 1,
-      "top_retrievals": [
-        {
-          "doc_id": "sec_apple_10k_2023",
-          "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
-          "page": 0,
-          "score": 0.0318,
-          "snippet": "Wearables, Home and Accessories (1) | 39,845 | (3) | % | 41,241 | 7 | % | 38,367\nServices (2) | 85,200 | 9 | % | 78,129"
-        },
-        {
-          "doc_id": "sec_apple_10k_2023",
-          "section": "Item 8 - Financial Statements and Supplementary Data",
-          "page": 0,
-          "score": 0.0313,
-          "snippet": "(1) Products net sales include amortization of the deferred value of unspecified software upgrade rights, which are bund"
-        },
-        {
-          "doc_id": "sec_apple_10k_2023",
-          "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
-          "page": 0,
-          "score": 0.0308,
-          "snippet": "2023 | Change | 2022 | Change | 2021\nNet sales by reportable segment:\nAmericas | $ | 162,560 | (4) | % | $ | 169,658 | 1"
-        }
-      ]
-    },
-    {
-      "id": "q3_microsoft_ai_azure",
-      "question": "How does Microsoft describe the competitive risks related to AI and cloud infrastructure investments like Azure?",
-      "target_doc": "sec_microsoft_10k_2023",
-      "target_sec": "item 1a - risk factors",
-      "matched_rank": 1,
-      "top_retrievals": [
-        {
-          "doc_id": "sec_microsoft_10k_2023",
-          "section": "Item 1A - Risk Factors",
-          "page": 0,
-          "score": 0.032,
-          "snippet": "The competitive pressures described above may cause decreased sales volumes, price reductions, and/or increased operatin"
-        },
-        {
-          "doc_id": "sec_microsoft_10k_2023",
-          "section": "Item 1 - Business",
-          "page": 0,
-          "score": 0.0313,
-          "snippet": "We have a long-term partnership with OpenAI, a leading AI research and deployment company. We deploy OpenAI\u2019s models acr"
-        },
-        {
-          "doc_id": "sec_microsoft_10k_2023",
-          "section": "Item 1 - Business",
-          "page": 0,
-          "score": 0.0313,
-          "snippet": "Enterprise Services, including Enterprise Support Services, Industry Solutions, and Nuance Professional Services, assist"
-        }
-      ]
-    },
-    {
-      "id": "q4_microsoft_intelligent_cloud",
-      "question": "What are Microsoft's principal product offerings within the Intelligent Cloud segment?",
-      "target_doc": "sec_microsoft_10k_2023",
-      "target_sec": "item 1 - business",
-      "matched_rank": 2,
-      "top_retrievals": [
-        {
-          "doc_id": "sec_microsoft_10k_2023",
-          "section": "Item 8 - Financial Statements and Supplementary Data",
-          "page": 0,
-          "score": 0.0328,
-          "snippet": "\u2022 Office Commercial (Office 365 subscriptions, the Office 365 portion of Microsoft 365 Commercial subscriptions, and Off"
-        },
-        {
-          "doc_id": "sec_microsoft_10k_2023",
-          "section": "Item 1 - Business",
-          "page": 0,
-          "score": 0.0312,
-          "snippet": "Enterprise Services, including Enterprise Support Services, Industry Solutions, and Nuance Professional Services, assist"
-        },
-        {
-          "doc_id": "sec_microsoft_10k_2023",
-          "section": "Item 1 - Business",
-          "page": 0,
-          "score": 0.0299,
-          "snippet": "What We Offer\nFounded in 1975, we develop and support software, services, devices, and solutions that deliver new value"
-        }
-      ]
-    },
-    {
-      "id": "q5_nvidia_china_export",
-      "question": "What does NVIDIA disclose regarding export controls and licensing restrictions affecting GPU sales to China?",
-      "target_doc": "sec_nvidia_10k_2024",
-      "target_sec": "item 1a - risk factors",
-      "matched_rank": 1,
-      "top_retrievals": [
-        {
-          "doc_id": "sec_nvidia_10k_2024",
-          "section": "Item 1A - Risk Factors",
-          "page": 0,
-          "score": 0.0328,
-          "snippet": "Given the increasing strategic importance of AI and rising geopolitical tensions, the USG has changed and may again chan"
-        },
-        {
-          "doc_id": "sec_nvidia_10k_2024",
-          "section": "Item 1A - Risk Factors",
-          "page": 0,
-          "score": 0.0323,
-          "snippet": "During the third quarter of fiscal year 2023, the USG announced export restrictions and export licensing requirements ta"
-        },
-        {
-          "doc_id": "sec_nvidia_10k_2024",
-          "section": "Item 1A - Risk Factors",
-          "page": 0,
-          "score": 0.0313,
-          "snippet": "Following these export controls, we transitioned some operations, including certain testing, validation, and supply and"
-        }
-      ]
-    },
-    {
-      "id": "q6_alphabet_cyber_board",
-      "question": "What does Alphabet state regarding cybersecurity governance and the role of the Board Audit and Compliance Committee?",
-      "target_doc": "sec_alphabet_10k_2023",
-      "target_sec": "item 1c - cybersecurity",
-      "matched_rank": 1,
-      "top_retrievals": [
-        {
-          "doc_id": "sec_alphabet_10k_2023",
-          "section": "Item 1C - Cybersecurity",
-          "page": 0,
-          "score": 0.0325,
-          "snippet": "24.\nTable of Contents | Alphabet Inc.\nsenior management makes the final materiality determinations and disclosure and ot"
-        },
-        {
-          "doc_id": "sec_nvidia_10k_2024",
-          "section": "Item 1C - Cybersecurity",
-          "page": 0,
-          "score": 0.031,
-          "snippet": "Refer to \u201cItem 1A. Risk factors\u201d in this annual report on Form 10-K for additional information about cybersecurity-relat"
-        },
-        {
-          "doc_id": "sec_cybersecurity_final_rule_2023",
-          "section": "page",
-          "page": 70,
-          "score": 0.0294,
-          "snippet": "70 \nrequirement would typically encompass identification of whether a registrant has a chief \ninformation security offic"
-        }
-      ]
-    },
-    {
-      "id": "q7_amazon_seasonality",
-      "question": "How does Amazon characterize seasonality and fulfillment network capacity risks in its retail operations?",
-      "target_doc": "sec_amazon_10k_2023",
-      "target_sec": "item 1a - risk factors",
-      "matched_rank": 1,
-      "top_retrievals": [
-        {
-          "doc_id": "sec_amazon_10k_2023",
-          "section": "Item 1A - Risk Factors",
-          "page": 0,
-          "score": 0.0325,
-          "snippet": "The Variability in Our Retail Business Places Increased Strain on Our Operations\nDemand for our products and services ca"
-        },
-        {
-          "doc_id": "sec_amazon_10k_2023",
-          "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
-          "page": 0,
-          "score": 0.032,
-          "snippet": "26\nTable of Contents\nfulfilled, the extent to which third-party sellers utilize Fulfillment by Amazon services, timing o"
-        },
-        {
-          "doc_id": "sec_amazon_10k_2023",
-          "section": "Item 1A - Risk Factors",
-          "page": 0,
-          "score": 0.0317,
-          "snippet": "We Face Risks Related to Successfully Optimizing and Operating Our Fulfillment Network and Data Centers\nFailures to adeq"
-        }
-      ]
-    },
-    {
-      "id": "q8_amd_foundry_tsmc",
-      "question": "What does AMD say about its reliance on third-party foundries like TSMC for manufacturing its semiconductor wafers?",
-      "target_doc": "sec_amd_10k_2023",
-      "target_sec": "item 1a - risk factors",
-      "matched_rank": 1,
-      "top_retrievals": [
-        {
-          "doc_id": "sec_amd_10k_2023",
-          "section": "Item 1A - Risk Factors",
-          "page": 0,
-          "score": 0.0325,
-          "snippet": "Operational and Technology Risks\nWe rely on third parties to manufacture our products, and if they are unable to do so o"
-        },
-        {
-          "doc_id": "sec_amd_10k_2023",
-          "section": "Item 1A - Risk Factors",
-          "page": 0,
-          "score": 0.0325,
-          "snippet": "Failure to achieve expected manufacturing yields for our products could negatively impact our results of operations.\nSem"
-        },
-        {
-          "doc_id": "sec_amd_10k_2023",
-          "section": "Item 1 - Business",
-          "page": 0,
-          "score": 0.0317,
-          "snippet": "We also work with industry leaders on process technology, design tools, intellectual property, software and other indust"
-        }
-      ]
-    },
-    {
-      "id": "q9_sec_rule_4day_deadline",
-      "question": "What is the 4-business-day disclosure deadline for material cybersecurity incidents on Form 8-K under the SEC final rule?",
-      "target_doc": "sec_cybersecurity_final_rule_2023",
-      "target_sec": "item 1.05",
-      "matched_rank": 1,
-      "top_retrievals": [
-        {
-          "doc_id": "sec_cybersecurity_final_rule_2023",
-          "section": "page",
-          "page": 33,
-          "score": 0.0325,
-          "snippet": "33 \ndetails that have the potential to be exploited by threat actors, but rather focuses on the incident\u2019s \nmaterial imp"
-        },
-        {
-          "doc_id": "sec_cybersecurity_final_rule_2023",
-          "section": "page",
-          "page": 182,
-          "score": 0.032,
-          "snippet": "182 \nAppendix C\u2014Form 8-K \nFORM 8-K \n* * * * * \nGENERAL INSTRUCTIONS \n* * * * * \nB. Events to be Reported and Time for Fi"
-        },
-        {
-          "doc_id": "sec_cybersecurity_final_rule_2023",
-          "section": "page",
-          "page": 32,
-          "score": 0.0293,
-          "snippet": "32 \nincident, so information regarding the incident\u2019s impact on the registrant\u2019s financial condition \nand results of ope"
-        }
-      ]
-    },
-    {
-      "id": "q10_whitehouse_eo_redteaming",
-      "question": "What reporting requirements does Executive Order 14110 place on companies developing dual-use foundation models regarding safety test results and red-teaming?",
-      "target_doc": "whitehouse_eo_14110_ai",
-      "target_sec": "section 4.2",
-      "matched_rank": 1,
-      "top_retrievals": [
-        {
-          "doc_id": "whitehouse_eo_14110_ai",
-          "section": "page",
-          "page": 7,
-          "score": 0.0328,
-          "snippet": "75197 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \ndo this work solely fo"
-        },
-        {
-          "doc_id": "whitehouse_eo_14110_ai",
-          "section": "page",
-          "page": 6,
-          "score": 0.0323,
-          "snippet": "and trustworthy AI systems, including: \n(A) developing a companion resource to the AI Risk Management Frame-\nwork, NIST"
-        },
-        {
-          "doc_id": "whitehouse_eo_14110_ai",
-          "section": "page",
-          "page": 7,
-          "score": 0.0295,
-          "snippet": "such as mitigations to improve performance on these red-team tests and \nstrengthen overall model security. Prior to the"
-        }
-      ]
-    }
-  ]
+  "dataset_file": "eval\\datasets\\eval_questions_40.jsonl",
+  "total_answerable_questions": 34,
+  "old_document_level_unfiltered": {
+    "match_mode": "document",
+    "use_doc_filter": false,
+    "total_evaluated": 34,
+    "hits_at_1": 33,
+    "hits_at_3": 34,
+    "hits_at_5": 34,
+    "hits_at_10": 34,
+    "recall_at_1": 0.9706,
+    "recall_at_3": 1.0,
+    "recall_at_5": 1.0,
+    "recall_at_10": 1.0,
+    "mrr": 0.9853,
+    "details": [
+      {
+        "id": "q_aapl_1",
+        "question": "What risks does Apple disclose regarding cellular carrier financing and subsidy plans?",
+        "target_doc": "sec_apple_10k_2023",
+        "evidence_phrase": "carriers providing cellular network service for",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "9c6e1ce3-931a-bd07-188b-6d6fbe1f4b49",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Some carriers providing cellular network service for the Company\u2019s products offer financing, install"
+          },
+          {
+            "chunk_id": "48d4db4b-8207-f28e-d1a6-6eb95009852c",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Apple Inc. | 2023 Form 10-K | 15\nThe Company is exposed to credit risk on its trade accounts receiva"
+          },
+          {
+            "chunk_id": "09d101f2-b4df-26b7-b985-1c34816a2ef1",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0299,
+            "snippet": "The technology industry, including, in some instances, the Company, is subject to intense media, pol"
+          }
+        ]
+      },
+      {
+        "id": "q_aapl_2",
+        "question": "What was Apple's total undiscounted liabilities and imputed interest reported in Note 7?",
+        "target_doc": "sec_apple_10k_2023",
+        "evidence_phrase": "total undiscounted liabilities | 13,841 |",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "b8ad16d0-a75a-93b7-0560-ab5ab322c7e6",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "The following table shows ROU assets and lease liabilities, and the associated financial statement l"
+          },
+          {
+            "chunk_id": "3445be21-c900-f61d-ec4d-5a930060821c",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0298,
+            "snippet": "Apple Inc. | 2023 Form 10-K | 38\nNote 5 \u2013 Property, Plant and Equipment\nThe following table shows th"
+          },
+          {
+            "chunk_id": "4f600577-e86b-7e57-b8ba-fb31d12ea08f",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0291,
+            "snippet": "Thereafter | 5,983 | 872 | 6,855\nTotal undiscounted liabilities | 13,841 | 1,425 | 15,266\nLess: Impu"
+          }
+        ]
+      },
+      {
+        "id": "q_aapl_3",
+        "question": "How did Apple's selling, general, and administrative expenses change between 2022 and 2023?",
+        "target_doc": "sec_apple_10k_2023",
+        "evidence_phrase": "selling, general and administrative expense was",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "c25218cf-5f2f-cda2-8737-601e6d89993f",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Services gross margin percentage decreased during 2023 compared to 2022 due to higher Services costs"
+          },
+          {
+            "chunk_id": "516a7c0f-2c94-76d1-ff06-e1f660c61600",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0304,
+            "snippet": "A reconciliation of the Company\u2019s segment operating income to the Consolidated Statements of Operati"
+          },
+          {
+            "chunk_id": "6499f066-0c4e-fbb6-f0a4-4cea5737b224",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0297,
+            "snippet": "Total cost of sales | 214,137 | 223,546 | 212,981\nGross margin | 169,148 | 170,782 | 152,836\nOperati"
+          }
+        ]
+      },
+      {
+        "id": "q_msft_1",
+        "question": "What are the terms and regulatory considerations regarding Microsoft's proposed acquisition of Activision Blizzard?",
+        "target_doc": "sec_microsoft_10k_2023",
+        "evidence_phrase": "activision blizzard, inc., a leader in",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "368827c4-cac0-1a9f-cc9e-1309f0778c51",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Following are details of the purchase price allocated to the intangible assets acquired:\n(In million"
+          },
+          {
+            "chunk_id": "27a453a4-8739-4ada-10ce-21fe26f71cbd",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "We are committed to designing and marketing first-party devices to help drive innovation, create new"
+          },
+          {
+            "chunk_id": "82e55f33-8a7a-557d-efac-30e5e5df2259",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "In fiscal year 2023, we paid cash tax of $4.8 billion due to the mandatory capitalization for tax pu"
+          }
+        ]
+      },
+      {
+        "id": "q_msft_2",
+        "question": "What was Microsoft's commercial remaining performance obligation (RPO) balance as of June 30, 2023?",
+        "target_doc": "sec_microsoft_10k_2023",
+        "evidence_phrase": "remaining performance obligation | commercial portion",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "02e8657a-5111-f403-f4eb-b2cea4d935b1",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "Changes in unearned revenue were as follows:\n(In millions)\nYear Ended June 30, 2023\nBalance, beginni"
+          },
+          {
+            "chunk_id": "fd56689d-fc08-1369-369a-e99acca272a0",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Commercial remaining performance obligation | Commercial portion of revenue allocated to remaining p"
+          },
+          {
+            "chunk_id": "10f726df-46ba-baed-79b5-e61c41dafdfe",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "(In millions)\nJune 30, | 2023 | 2022 | 2021\nUnited States | $ | 114,380 | $ | 106,430 | $ | 76,153\nI"
+          }
+        ]
+      },
+      {
+        "id": "q_msft_3",
+        "question": "How does Microsoft characterize datacenter capacity needs and infrastructure investments for cloud and AI?",
+        "target_doc": "sec_microsoft_10k_2023",
+        "evidence_phrase": "datacenter capacity to support the delivery",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "090a3775-1b6e-867c-67f8-fa0412b85de0",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "We have a long-term partnership with OpenAI, a leading AI research and deployment company. We deploy"
+          },
+          {
+            "chunk_id": "971676d1-e3f0-f719-8a8c-375774118953",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "40\nPART II\nItem 7\nEconomic Conditions, Challenges, and Risks\nThe markets for software, devices, and"
+          },
+          {
+            "chunk_id": "cdadebbb-f442-1c52-93d4-4681136c3249",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "Build the Intelligent Cloud and Intelligent Edge Platform\nAs digital transformation and adoption of"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_1",
+        "question": "What export control licensing requirements did the US government impose on NVIDIA's high-performance GPUs shipped to China?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "licensing requirements that, with certain exceptions,",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "334e8dee-626e-df60-2d53-464ab3921147",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "During the third quarter of fiscal year 2023, the USG announced export restrictions and export licen"
+          },
+          {
+            "chunk_id": "92f4e46b-6114-3e55-a448-a3e4e0448679",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Given the increasing strategic importance of AI and rising geopolitical tensions, the USG has change"
+          },
+          {
+            "chunk_id": "147ececa-7e1b-1f4e-3ca5-e7b6eafee1ce",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0308,
+            "snippet": "We have not received licenses to ship these restricted products to China. We are working to expand o"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_2",
+        "question": "What were NVIDIA's Data Center segment revenues in fiscal year 2024?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "data center revenue from 19% in",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "10f77ab2-aaa9-8afa-1d6a-18ba924320da",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Operating expenses increased for fiscal year 2024, driven by growth in employees and compensation in"
+          },
+          {
+            "chunk_id": "2fe7a323-62a8-52dc-76d2-4f733211a023",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Operating income | $ | 32,972 | $ | 4,224 | Up 681%\nNet income | $ | 29,760 | $ | 4,368 | Up 581%\nNe"
+          },
+          {
+            "chunk_id": "d252c478-915e-6249-f6b8-dcb70e1b2aee",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0312,
+            "snippet": "Graphics | 5,846 | 4,552 | 1,294 | 28 | %\nAll Other | (4,890) | (5,411) | 521 | (10) | %\nTotal | $ |"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_3",
+        "question": "How did NVIDIA describe customer adoption and demand for the Hopper architecture GPUs?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "hopper architecture products is improving, and",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "cfef2979-ff96-ca78-7ace-e60a51cd3839",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "Headquartered in Santa Clara, California, NVIDIA was incorporated in California in April 1993 and re"
+          },
+          {
+            "chunk_id": "10f77ab2-aaa9-8afa-1d6a-18ba924320da",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Operating expenses increased for fiscal year 2024, driven by growth in employees and compensation in"
+          },
+          {
+            "chunk_id": "2e76cdcb-3af3-b839-caca-de0cf5197ca5",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "NVIDIA has a platform strategy, bringing together hardware, systems, software, algorithms, libraries"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_4",
+        "question": "What are NVIDIA's two primary reportable operating segments and their primary end markets?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "compute & networking segment is comprised",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "cf0a6bf3-2a30-41e9-04d8-0ee6b20f997d",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Professional artists, architects and designers use NVIDIA partner products accelerated with our GPUs"
+          },
+          {
+            "chunk_id": "13bed013-12b5-daff-70a0-a2c121ad98cc",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 15 - Exhibits, Financial Statement Schedules",
+            "page": 0,
+            "score": 0.0311,
+            "snippet": "77\nTable of Contents\nNVIDIA Corporation and Subsidiaries\nNotes to the Consolidated Financial Stateme"
+          },
+          {
+            "chunk_id": "f92a9738-d840-ea4d-928d-40a34c598a41",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.029,
+            "snippet": "The following discussion and analysis of our financial condition and results of operations should be"
+          }
+        ]
+      },
+      {
+        "id": "q_goog_1",
+        "question": "How could Internet service providers restricting access affect Alphabet's advertising and cloud businesses?",
+        "target_doc": "sec_alphabet_10k_2023",
+        "evidence_phrase": "internet access providers may be able",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "b0d62c8f-4baf-1185-450b-a394d6754d66",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Our business depends on continued and unimpeded access to the Internet by us and our users. Internet"
+          },
+          {
+            "chunk_id": "bc659a59-d81d-6f9c-7dcd-7debd9e2a1ab",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "If we fail to either detect and prevent an increase in problematic content or effectively promote hi"
+          },
+          {
+            "chunk_id": "6068eb29-e817-bda5-5956-87a0ca642bb9",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0293,
+            "snippet": "\u2022 companies that design, manufacture, and market consumer hardware products, including businesses th"
+          }
+        ]
+      },
+      {
+        "id": "q_goog_2",
+        "question": "What was the total dollar amount spent by Alphabet on Class C share repurchases in 2023?",
+        "target_doc": "sec_alphabet_10k_2023",
+        "evidence_phrase": "class c share repurchases",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "2806b42e-2585-eaac-402a-7fe7dff11714",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Share Repurchases\nIn the years ended December 31, 2021, 2022, and 2023 , we repurchased $ 50.3 billi"
+          },
+          {
+            "chunk_id": "ccf1aa8e-4e8f-5830-ceb7-033277085138",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "As of December 31, 2023, we had senior unsecured notes outstanding with a total carrying value of $1"
+          },
+          {
+            "chunk_id": "a6e3911a-ee86-c9f9-118b-56c0cc23c892",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 5 - Market for Registrant's Common Equity and Related Stockholder Matters",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "25.\nTable of Contents | Alphabet Inc.\nIssuer Purchases of Equity Securities\nThe following table pres"
+          }
+        ]
+      },
+      {
+        "id": "q_goog_3",
+        "question": "What components make up Google Services and Google Cloud revenues within Alphabet?",
+        "target_doc": "sec_alphabet_10k_2023",
+        "evidence_phrase": "google services and google cloud, and",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "8816c992-929d-7b7b-58b5-dc689197bc27",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "Google Cloud\nGoogle Cloud revenues are comprised of the following:\n\u2022 Google Cloud Platform, which ge"
+          },
+          {
+            "chunk_id": "bd8d1c64-654f-76e1-c9de-d4b3efec054e",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "\u2022 Google Cloud includes infrastructure and platform services, collaboration tools, and other service"
+          },
+          {
+            "chunk_id": "24f8cf96-b3f4-7ea0-6724-1e1e2536a48d",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "56.\nTable of Contents | Alphabet Inc.\nand amounts paid to Google Network partners are recorded as co"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_1",
+        "question": "What risks does Amazon face in connection with its government contracts and procurement regulations?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "government contracts and related procurement regulations",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "265580be-1c83-6b32-92ea-fb88b9d4c8cc",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "We Are Subject to Risks Related to Government Contracts and Related Procurement Regulations\nOur cont"
+          },
+          {
+            "chunk_id": "4cd2568b-12b1-de47-4ef3-9192f0dedd5a",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Our business with government customers may present additional uncertainties. We derive substantial r"
+          },
+          {
+            "chunk_id": "56c134b1-4a06-f2bc-91d8-33b66a82ffe8",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.031,
+            "snippet": "14\nTable of Contents\nexisting laws governing issues such as property ownership, libel, privacy, data"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_2",
+        "question": "What proceeds did Amazon receive from property and equipment sales and incentives in 2023?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "proceeds from property and equipment sales",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "7e6ba915-d909-f96a-0d0e-37f5814073e6",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Proceeds from property and equipment sales and incentives | 5,657 | 5,324 | 4,596\nAcquisitions, net"
+          },
+          {
+            "chunk_id": "69e1ed69-cf71-f69c-aaf0-3c32695508b2",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Seattle, Washington\nFebruary 1, 2024\n36\nTable of Contents\nAMAZON.COM, INC.\nCONSOLIDATED STATEMENTS O"
+          },
+          {
+            "chunk_id": "48258832-ee4c-f217-2282-2ac63fdc04bb",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0308,
+            "snippet": "Year Ended December 31,\n2022 | 2023\nNet cash provided by (used in) operating activities | $ | 46,752"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_3",
+        "question": "How did Amazon describe AWS segment sales growth and operational focus during 2023?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "aws segment are primarily classified as",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "eaeb2adb-5c79-8015-55e0-e52e4a5f8597",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Results of Operations\nWe have organized our operations into three segments: North America, Internati"
+          },
+          {
+            "chunk_id": "33d65e0f-ef28-04b5-1932-30060607c2ea",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "24\nTable of Contents\nAWS sales increased 13% in 2023, compared to the prior year. The sales growth p"
+          },
+          {
+            "chunk_id": "d604c8b6-0f2e-7d3b-a458-9fb0254e7ec8",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "Consolidated | $ | 513,983 | $ | 574,785\nYear-over-year Percentage Growth (Decline):\nNorth America |"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_4",
+        "question": "How does Amazon handle unearned revenue and long-term customer contractual obligations?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "unearned revenue | 2,314 | 2,216",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "3e9c8d43-cc38-149f-f2b1-6e08f6600841",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "50\nTable of Contents\n2023. As of December 31, 2022 and 2023, our total self-insurance liabilities we"
+          },
+          {
+            "chunk_id": "d3c0fd70-ae63-eb48-c71b-65367dae25f6",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Unearned Revenue\nUnearned revenue comprises mainly unearned revenue related to volume licensing prog"
+          },
+          {
+            "chunk_id": "34fbbcae-8945-a015-f0ae-5a718c95d6a7",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "Unearned revenue comprises mainly unearned revenue related to volume licensing programs, which may i"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_1",
+        "question": "What relationship and transactions does AMD maintain with its ATMP joint ventures?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "purchases from the atmp jv during",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "c689ab15-5881-4ca1-8ac0-81c0d5a8a00a",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "We are a party to a wafer supply agreement (WSA) with GF that governs the terms by which we purchase"
+          },
+          {
+            "chunk_id": "69cf7ea6-ed78-d31d-2957-3c6a4a3dc57f",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0305,
+            "snippet": "We also work with industry leaders on process technology, design tools, intellectual property, softw"
+          },
+          {
+            "chunk_id": "879dd07c-5b02-2833-171b-83eb67173314",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0301,
+            "snippet": "*In the second quarter of fiscal year 2022, the Company reassigned goodwill balances among the updat"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_2",
+        "question": "What impact did the Xilinx acquisition have on AMD's amortization of acquired intangible assets in 2023?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "xilinx, xdna, zynq and combinations",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "8f48a2e9-2749-d03a-6dd1-33fd0cc3e749",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "Against the backdrop of a mixed demand environment, net revenue for 2023 was $22.7 billion, a decrea"
+          },
+          {
+            "chunk_id": "45d65a11-a3ce-c8b3-8b20-927306cbcf79",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0312,
+            "snippet": "NOTE 6 \u2013 Acquisition-related Intangible Assets and Goodwill\nAcquisition-related Intangible Assets\nAc"
+          },
+          {
+            "chunk_id": "18a95b60-aac4-c09d-28be-6c30bf14c2c6",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0306,
+            "snippet": "Xilinx Acquisition\nOn February 14, 2022 (Xilinx Acquisition Date), the Company completed the acquisi"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_3",
+        "question": "What was AMD's Data Center segment net revenue in 2023 compared to 2022?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "data center segment revenue primarily driven",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "8f48a2e9-2749-d03a-6dd1-33fd0cc3e749",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Against the backdrop of a mixed demand environment, net revenue for 2023 was $22.7 billion, a decrea"
+          },
+          {
+            "chunk_id": "ac7051d0-fab3-d367-182d-983c9275cf36",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "In addition, the calculation of our tax liabilities involves addressing uncertainties in the applica"
+          },
+          {
+            "chunk_id": "4c272127-b2e7-121e-daa5-8a45b4cd35a7",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "Data Center operating income was $1.3 billion in 2023, compared to operating income of $1.8 billion"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_4",
+        "question": "How did AMD's Client and Gaming segments perform due to inventory adjustments and PC demand?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "cautionary statement regarding forward-looking statements",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "7f7804ea-9071-65e7-836f-7fb4b5379dff",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "The demand for our products depends in part on the market conditions in the industries into which th"
+          },
+          {
+            "chunk_id": "141b5a6f-8c16-9feb-fd07-ceda82869c44",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "4\nTable of Contents\nClient Segment\nClient Market\nOur CPUs are incorporated into computing platforms,"
+          },
+          {
+            "chunk_id": "8f48a2e9-2749-d03a-6dd1-33fd0cc3e749",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0299,
+            "snippet": "Against the backdrop of a mixed demand environment, net revenue for 2023 was $22.7 billion, a decrea"
+          }
+        ]
+      },
+      {
+        "id": "q_meta_1",
+        "question": "What is Meta's operational focus and financial performance within the Reality Labs segment?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "reality labs (rl). currently, we generate",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "2637d8d5-f09b-f62a-4e86-7c5dab48088c",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "See Accompanying Notes to Consolidated Financial Statements.\n94\nTable of Contents\nMETA PLATFORMS, IN"
+          },
+          {
+            "chunk_id": "9a9f15f2-0084-e317-ba3b-633de608ef39",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "We incur significant expenses in operating our business, and some of our investments, particularly o"
+          },
+          {
+            "chunk_id": "749433c9-87ec-abc5-12b8-c489fb8e1154",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0305,
+            "snippet": "Overview\nOur mission is to give people the power to build community and bring the world closer toget"
+          }
+        ]
+      },
+      {
+        "id": "q_meta_2",
+        "question": "How did Meta's ad impressions and average price per ad change across its Family of Apps in 2023?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "ad impressions, particularly for facebook an",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "720ef1f3-e377-bfd1-e3e5-0b4ce5d05a7b",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Total revenue | $ | 134,902 | $ | 116,609 | $ | 117,929 | 16 | % | (1) | %\nFamily of Apps\nFoA revenu"
+          },
+          {
+            "chunk_id": "8322afbe-d012-033f-5839-e735348d7912",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "\u2022 Facebook monthly active users (MAUs) were 3.07 billion as of December 31, 2023, an increase of 3%"
+          },
+          {
+            "chunk_id": "d0758c53-8718-b41d-fc3c-0de620598bff",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0313,
+            "snippet": "Cost of revenue | $ | 177 | $ | \u2014 | $ | (224) | $ | (47)\nResearch and development | 1,581 | 413 | \u2014"
+          }
+        ]
+      },
+      {
+        "id": "q_meta_3",
+        "question": "What does Meta disclose regarding antitrust and consumer protection claims by the Federal Trade Commission?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "federal trade commission (ftc), which took",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "0923f44d-e041-4683-73c5-6df7d49ec337",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Competition\nWe are subject to various litigation and government inquiries and investigations, formal"
+          },
+          {
+            "chunk_id": "ff844a8b-ec41-e539-7645-de49eff31683",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 3 - Legal Proceedings",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "Competition\nWe are subject to various litigation and government inquiries and investigations, formal"
+          },
+          {
+            "chunk_id": "26244685-b6bd-57a9-849d-7a19ce2b7e40",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 105,
+            "score": 0.0287,
+            "snippet": "105 \nmarket conditions, new technologies, new transaction structures, and emergent risks. In this \nr"
+          }
+        ]
+      },
+      {
+        "id": "q_meta_4",
+        "question": "What products constitute Meta's Family of Apps and how are they monetized?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "family of apps (foa) and reality",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "ba8718eb-bc97-f084-2779-acb0c4a787ce",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "The majority of our investments are directed toward developing our family of apps. In 2023, 80% of o"
+          },
+          {
+            "chunk_id": "2637d8d5-f09b-f62a-4e86-7c5dab48088c",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "See Accompanying Notes to Consolidated Financial Statements.\n94\nTable of Contents\nMETA PLATFORMS, IN"
+          },
+          {
+            "chunk_id": "749433c9-87ec-abc5-12b8-c489fb8e1154",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0306,
+            "snippet": "Overview\nOur mission is to give people the power to build community and bring the world closer toget"
+          }
+        ]
+      },
+      {
+        "id": "q_eo_1",
+        "question": "What mitigation measures does EO 14110 specify regarding chemical, biological, radiological, or nuclear (CBRN) threats in AI?",
+        "target_doc": "whitehouse_eo_14110_ai",
+        "evidence_phrase": "chemical, biological, radiological",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "4ec55cb7-7ef9-96ba-de9d-d890f374e071",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 10,
+            "score": 0.0325,
+            "snippet": "the development or use of CBRN threats\u2014with a particular focus on biological \nweapons\u2014the following"
+          },
+          {
+            "chunk_id": "6fe18da7-3b53-596a-9289-49f7a77f2f0f",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 10,
+            "score": 0.0315,
+            "snippet": "sections 4.3(b)(ii) and (iii) of this section for national security systems, \nand the Secretary of H"
+          },
+          {
+            "chunk_id": "fa7dea83-702b-a1c0-62da-5c5d7ea6af9a",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 11,
+            "score": 0.0315,
+            "snippet": "75201 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \nth"
+          }
+        ]
+      },
+      {
+        "id": "q_eo_2",
+        "question": "What are the reporting obligations for companies training dual-use foundation models regarding AI red-teaming?",
+        "target_doc": "whitehouse_eo_14110_ai",
+        "evidence_phrase": "red-teaming\u2019\u2019 means a structured testing",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "34820c20-36a1-e642-3432-64c77e8aa0ce",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 7,
+            "score": 0.0328,
+            "snippet": "75197 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \ndo"
+          },
+          {
+            "chunk_id": "1e498b80-734b-3a4f-c9ec-7505f9adbc32",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 6,
+            "score": 0.0323,
+            "snippet": "and trustworthy AI systems, including: \n(A) developing a companion resource to the AI Risk Managemen"
+          },
+          {
+            "chunk_id": "e9a206bc-f8b5-9b45-8cd5-07298d428277",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 4,
+            "score": 0.0306,
+            "snippet": "75194 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \n(d"
+          }
+        ]
+      },
+      {
+        "id": "q_eo_3",
+        "question": "What role do federal agencies have in developing safety standards and guidance under EO 14110?",
+        "target_doc": "whitehouse_eo_14110_ai",
+        "evidence_phrase": "federal government-wide approach to doing so.",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "f64ea2b9-5631-9232-af3b-38db27cfaa16",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 10,
+            "score": 0.0328,
+            "snippet": "75200 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \nAI"
+          },
+          {
+            "chunk_id": "34820c20-36a1-e642-3432-64c77e8aa0ce",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 7,
+            "score": 0.032,
+            "snippet": "75197 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \ndo"
+          },
+          {
+            "chunk_id": "2efa28c7-202a-3ed2-0d0c-f1c6b327b14d",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 28,
+            "score": 0.0301,
+            "snippet": "of OMB, in coordination with the Director of OSTP, and in consultation \nwith the interagency council"
+          }
+        ]
+      },
+      {
+        "id": "q_sec18_1",
+        "question": "What restrictions does the 2018 SEC guidance place on insider trading while aware of undisclosed cybersecurity incidents?",
+        "target_doc": "sec_cybersecurity_guidance_2018",
+        "evidence_phrase": "insiders must not trade a public",
+        "matched_rank": 2,
+        "top_retrievals": [
+          {
+            "chunk_id": "7be3d719-4514-90ae-e9db-21f83062c6a3",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 6,
+            "score": 0.0325,
+            "snippet": "6 \n(Disclosure controls and procedures), as well as to Accounting Standards Codifications 350-40 \n(I"
+          },
+          {
+            "chunk_id": "488e7a78-50d9-e4ae-9c9c-bed13814af80",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 22,
+            "score": 0.0315,
+            "snippet": "22 \n \nand insider trading policies take into account and prevent trading on the basis of material \nn"
+          },
+          {
+            "chunk_id": "61f70c02-c8eb-ea0b-ab7c-6d079ff1d3f6",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 5,
+            "score": 0.0311,
+            "snippet": "5 \n \nfaced or is likely to face. \nAdditionally, directors, officers, and other corporate insiders mu"
+          }
+        ]
+      },
+      {
+        "id": "q_sec18_2",
+        "question": "What are the requirements for public companies to maintain robust disclosure controls and procedures for cyber risks?",
+        "target_doc": "sec_cybersecurity_guidance_2018",
+        "evidence_phrase": "controls and procedures that provide an",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "b80a6d3e-9304-5c86-ce2f-fad2ea02e11f",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 4,
+            "score": 0.0328,
+            "snippet": "4 \n \n\u2022 lost revenues resulting from the unauthorized use of proprietary information or \nthe failure"
+          },
+          {
+            "chunk_id": "aa774736-6146-89d0-f20b-40e44a93b017",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 20,
+            "score": 0.0313,
+            "snippet": "20 \n \nevaluated in the context of the disclosure requirement of Exchange Act Rule 12b-20.54 When \nde"
+          },
+          {
+            "chunk_id": "3150e7e3-793b-f6f1-95b4-b90018214e54",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 125,
+            "score": 0.0308,
+            "snippet": "125 \ncybersecurity risk management, strategy, and governance. The final rules require disclosure \nre"
+          }
+        ]
+      },
+      {
+        "id": "q_sec18_3",
+        "question": "How should the board of directors disclose its role in cybersecurity risk oversight?",
+        "target_doc": "sec_cybersecurity_guidance_2018",
+        "evidence_phrase": "board of directors\u2019 role in the",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "ed4b11a7-d25d-b042-b47f-efd3f3146219",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 18,
+            "score": 0.0328,
+            "snippet": "18 \n \ninvestors about how a company perceives the role of its board and the relationship between the"
+          },
+          {
+            "chunk_id": "1d877b6d-ed26-a8d9-4206-31eb2944757e",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 171,
+            "score": 0.0313,
+            "snippet": "171 \naffect the registrant, including its business strategy, results of operations, or financial con"
+          },
+          {
+            "chunk_id": "efec490e-14fa-740c-942f-8cec4bda8fff",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 69,
+            "score": 0.0306,
+            "snippet": "69 \nmanagement, and financial oversight. While we have also removed the proposed Item \n106(c)(1)(ii)"
+          }
+        ]
+      },
+      {
+        "id": "q_sec23_1",
+        "question": "What are the reporting requirements under Form 8-K Item 1.05 for material cybersecurity incidents?",
+        "target_doc": "sec_cybersecurity_final_rule_2023",
+        "evidence_phrase": "item 1.05",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "1b312cd9-47ba-2dc7-88d1-76338fce9369",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 12,
+            "score": 0.0325,
+            "snippet": "12 \nItem Summary Description of the Disclosure Requirement30 \nRegulation S-K Item 106(b) \u2013 \nRisk man"
+          },
+          {
+            "chunk_id": "d289dadf-6975-3fed-7959-0214da8ab5d8",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 51,
+            "score": 0.0315,
+            "snippet": "51 \ninformation called for in Item 1.05(a) that is not determined or is unavailable at the time of t"
+          },
+          {
+            "chunk_id": "3c5af278-1584-c43d-3564-c9d627c70a93",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 124,
+            "score": 0.031,
+            "snippet": "124 \nin less reporting and less information released to the market . The mandatory disclosure in Ite"
+          }
+        ]
+      },
+      {
+        "id": "q_sec23_2",
+        "question": "How does the SEC address potential conflicts between Item 1.05 and the Cyber Incident Reporting for Critical Infrastructure Act (CIRCIA)?",
+        "target_doc": "sec_cybersecurity_final_rule_2023",
+        "evidence_phrase": "circia\u201d)19 on march 15, 2022, as",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "463e0b3f-587f-b2a7-97ad-5783385a52b4",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 9,
+            "score": 0.0325,
+            "snippet": "9 \nLegislatively, we note two significant developments occurred following publication of \nthe Propos"
+          },
+          {
+            "chunk_id": "178203ec-271c-7067-6d08-de08d5f3a56e",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 43,
+            "score": 0.032,
+            "snippet": "43 \nWe also considered the conflicts commenters alleged with CIRCIA. Specifically, they \nstated that"
+          },
+          {
+            "chunk_id": "8ac6081f-fd13-21d8-c6d2-adc802f917bf",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 45,
+            "score": 0.0317,
+            "snippet": "45 \nsubject matter, Item 1.05 neither conflicts with nor impedes the purpose of those regulations an"
+          }
+        ]
+      },
+      {
+        "id": "q_sec23_3",
+        "question": "Under what circumstances may the Attorney General delay a public company's Item 1.05 cybersecurity disclosure?",
+        "target_doc": "sec_cybersecurity_final_rule_2023",
+        "evidence_phrase": "attorney general determines that the disclosure",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "8f659b83-3015-7aec-0e9b-0b6e8eec502d",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 184,
+            "score": 0.0328,
+            "snippet": "184 \n* * * * * \nItem 1.05 Material Cybersecurity Incidents. \n(a) If the registrant experiences a cyb"
+          },
+          {
+            "chunk_id": "608fbb45-b891-c824-f49a-fd78016580e0",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 34,
+            "score": 0.032,
+            "snippet": "34 \nrationale to return to bifurcated deadlines.127 Form 8-K provides for current reporting of event"
+          },
+          {
+            "chunk_id": "511c3836-3bd9-0709-5ab4-885e8cd16090",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 123,
+            "score": 0.0318,
+            "snippet": "123 \nup to an additional 30 days if the Attorney General determines disclosure continues to pose a"
+          }
+        ]
+      }
+    ]
+  },
+  "new_chunk_level_unfiltered": {
+    "match_mode": "chunk",
+    "use_doc_filter": false,
+    "total_evaluated": 34,
+    "hits_at_1": 13,
+    "hits_at_3": 19,
+    "hits_at_5": 20,
+    "hits_at_10": 26,
+    "recall_at_1": 0.3824,
+    "recall_at_3": 0.5588,
+    "recall_at_5": 0.5882,
+    "recall_at_10": 0.7647,
+    "mrr": 0.492,
+    "details": [
+      {
+        "id": "q_aapl_1",
+        "question": "What risks does Apple disclose regarding cellular carrier financing and subsidy plans?",
+        "target_doc": "sec_apple_10k_2023",
+        "evidence_phrase": "carriers providing cellular network service for",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "9c6e1ce3-931a-bd07-188b-6d6fbe1f4b49",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Some carriers providing cellular network service for the Company\u2019s products offer financing, install"
+          },
+          {
+            "chunk_id": "48d4db4b-8207-f28e-d1a6-6eb95009852c",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Apple Inc. | 2023 Form 10-K | 15\nThe Company is exposed to credit risk on its trade accounts receiva"
+          },
+          {
+            "chunk_id": "09d101f2-b4df-26b7-b985-1c34816a2ef1",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0299,
+            "snippet": "The technology industry, including, in some instances, the Company, is subject to intense media, pol"
+          }
+        ]
+      },
+      {
+        "id": "q_aapl_2",
+        "question": "What was Apple's total undiscounted liabilities and imputed interest reported in Note 7?",
+        "target_doc": "sec_apple_10k_2023",
+        "evidence_phrase": "total undiscounted liabilities | 13,841 |",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "b8ad16d0-a75a-93b7-0560-ab5ab322c7e6",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "The following table shows ROU assets and lease liabilities, and the associated financial statement l"
+          },
+          {
+            "chunk_id": "3445be21-c900-f61d-ec4d-5a930060821c",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0298,
+            "snippet": "Apple Inc. | 2023 Form 10-K | 38\nNote 5 \u2013 Property, Plant and Equipment\nThe following table shows th"
+          },
+          {
+            "chunk_id": "4f600577-e86b-7e57-b8ba-fb31d12ea08f",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0291,
+            "snippet": "Thereafter | 5,983 | 872 | 6,855\nTotal undiscounted liabilities | 13,841 | 1,425 | 15,266\nLess: Impu"
+          }
+        ]
+      },
+      {
+        "id": "q_aapl_3",
+        "question": "How did Apple's selling, general, and administrative expenses change between 2022 and 2023?",
+        "target_doc": "sec_apple_10k_2023",
+        "evidence_phrase": "selling, general and administrative expense was",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "c25218cf-5f2f-cda2-8737-601e6d89993f",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Services gross margin percentage decreased during 2023 compared to 2022 due to higher Services costs"
+          },
+          {
+            "chunk_id": "516a7c0f-2c94-76d1-ff06-e1f660c61600",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0304,
+            "snippet": "A reconciliation of the Company\u2019s segment operating income to the Consolidated Statements of Operati"
+          },
+          {
+            "chunk_id": "6499f066-0c4e-fbb6-f0a4-4cea5737b224",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0297,
+            "snippet": "Total cost of sales | 214,137 | 223,546 | 212,981\nGross margin | 169,148 | 170,782 | 152,836\nOperati"
+          }
+        ]
+      },
+      {
+        "id": "q_msft_1",
+        "question": "What are the terms and regulatory considerations regarding Microsoft's proposed acquisition of Activision Blizzard?",
+        "target_doc": "sec_microsoft_10k_2023",
+        "evidence_phrase": "activision blizzard, inc., a leader in",
+        "matched_rank": 2,
+        "top_retrievals": [
+          {
+            "chunk_id": "368827c4-cac0-1a9f-cc9e-1309f0778c51",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Following are details of the purchase price allocated to the intangible assets acquired:\n(In million"
+          },
+          {
+            "chunk_id": "27a453a4-8739-4ada-10ce-21fe26f71cbd",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "We are committed to designing and marketing first-party devices to help drive innovation, create new"
+          },
+          {
+            "chunk_id": "82e55f33-8a7a-557d-efac-30e5e5df2259",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "In fiscal year 2023, we paid cash tax of $4.8 billion due to the mandatory capitalization for tax pu"
+          }
+        ]
+      },
+      {
+        "id": "q_msft_2",
+        "question": "What was Microsoft's commercial remaining performance obligation (RPO) balance as of June 30, 2023?",
+        "target_doc": "sec_microsoft_10k_2023",
+        "evidence_phrase": "remaining performance obligation | commercial portion",
+        "matched_rank": 2,
+        "top_retrievals": [
+          {
+            "chunk_id": "02e8657a-5111-f403-f4eb-b2cea4d935b1",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "Changes in unearned revenue were as follows:\n(In millions)\nYear Ended June 30, 2023\nBalance, beginni"
+          },
+          {
+            "chunk_id": "fd56689d-fc08-1369-369a-e99acca272a0",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Commercial remaining performance obligation | Commercial portion of revenue allocated to remaining p"
+          },
+          {
+            "chunk_id": "10f726df-46ba-baed-79b5-e61c41dafdfe",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "(In millions)\nJune 30, | 2023 | 2022 | 2021\nUnited States | $ | 114,380 | $ | 106,430 | $ | 76,153\nI"
+          }
+        ]
+      },
+      {
+        "id": "q_msft_3",
+        "question": "How does Microsoft characterize datacenter capacity needs and infrastructure investments for cloud and AI?",
+        "target_doc": "sec_microsoft_10k_2023",
+        "evidence_phrase": "datacenter capacity to support the delivery",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "090a3775-1b6e-867c-67f8-fa0412b85de0",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "We have a long-term partnership with OpenAI, a leading AI research and deployment company. We deploy"
+          },
+          {
+            "chunk_id": "971676d1-e3f0-f719-8a8c-375774118953",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "40\nPART II\nItem 7\nEconomic Conditions, Challenges, and Risks\nThe markets for software, devices, and"
+          },
+          {
+            "chunk_id": "cdadebbb-f442-1c52-93d4-4681136c3249",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "Build the Intelligent Cloud and Intelligent Edge Platform\nAs digital transformation and adoption of"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_1",
+        "question": "What export control licensing requirements did the US government impose on NVIDIA's high-performance GPUs shipped to China?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "licensing requirements that, with certain exceptions,",
+        "matched_rank": 7,
+        "top_retrievals": [
+          {
+            "chunk_id": "334e8dee-626e-df60-2d53-464ab3921147",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "During the third quarter of fiscal year 2023, the USG announced export restrictions and export licen"
+          },
+          {
+            "chunk_id": "92f4e46b-6114-3e55-a448-a3e4e0448679",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Given the increasing strategic importance of AI and rising geopolitical tensions, the USG has change"
+          },
+          {
+            "chunk_id": "147ececa-7e1b-1f4e-3ca5-e7b6eafee1ce",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0308,
+            "snippet": "We have not received licenses to ship these restricted products to China. We are working to expand o"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_2",
+        "question": "What were NVIDIA's Data Center segment revenues in fiscal year 2024?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "data center revenue from 19% in",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "10f77ab2-aaa9-8afa-1d6a-18ba924320da",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Operating expenses increased for fiscal year 2024, driven by growth in employees and compensation in"
+          },
+          {
+            "chunk_id": "2fe7a323-62a8-52dc-76d2-4f733211a023",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Operating income | $ | 32,972 | $ | 4,224 | Up 681%\nNet income | $ | 29,760 | $ | 4,368 | Up 581%\nNe"
+          },
+          {
+            "chunk_id": "d252c478-915e-6249-f6b8-dcb70e1b2aee",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0312,
+            "snippet": "Graphics | 5,846 | 4,552 | 1,294 | 28 | %\nAll Other | (4,890) | (5,411) | 521 | (10) | %\nTotal | $ |"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_3",
+        "question": "How did NVIDIA describe customer adoption and demand for the Hopper architecture GPUs?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "hopper architecture products is improving, and",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "cfef2979-ff96-ca78-7ace-e60a51cd3839",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "Headquartered in Santa Clara, California, NVIDIA was incorporated in California in April 1993 and re"
+          },
+          {
+            "chunk_id": "10f77ab2-aaa9-8afa-1d6a-18ba924320da",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Operating expenses increased for fiscal year 2024, driven by growth in employees and compensation in"
+          },
+          {
+            "chunk_id": "2e76cdcb-3af3-b839-caca-de0cf5197ca5",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "NVIDIA has a platform strategy, bringing together hardware, systems, software, algorithms, libraries"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_4",
+        "question": "What are NVIDIA's two primary reportable operating segments and their primary end markets?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "compute & networking segment is comprised",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "cf0a6bf3-2a30-41e9-04d8-0ee6b20f997d",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Professional artists, architects and designers use NVIDIA partner products accelerated with our GPUs"
+          },
+          {
+            "chunk_id": "13bed013-12b5-daff-70a0-a2c121ad98cc",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 15 - Exhibits, Financial Statement Schedules",
+            "page": 0,
+            "score": 0.0311,
+            "snippet": "77\nTable of Contents\nNVIDIA Corporation and Subsidiaries\nNotes to the Consolidated Financial Stateme"
+          },
+          {
+            "chunk_id": "f92a9738-d840-ea4d-928d-40a34c598a41",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.029,
+            "snippet": "The following discussion and analysis of our financial condition and results of operations should be"
+          }
+        ]
+      },
+      {
+        "id": "q_goog_1",
+        "question": "How could Internet service providers restricting access affect Alphabet's advertising and cloud businesses?",
+        "target_doc": "sec_alphabet_10k_2023",
+        "evidence_phrase": "internet access providers may be able",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "b0d62c8f-4baf-1185-450b-a394d6754d66",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Our business depends on continued and unimpeded access to the Internet by us and our users. Internet"
+          },
+          {
+            "chunk_id": "bc659a59-d81d-6f9c-7dcd-7debd9e2a1ab",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "If we fail to either detect and prevent an increase in problematic content or effectively promote hi"
+          },
+          {
+            "chunk_id": "6068eb29-e817-bda5-5956-87a0ca642bb9",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0293,
+            "snippet": "\u2022 companies that design, manufacture, and market consumer hardware products, including businesses th"
+          }
+        ]
+      },
+      {
+        "id": "q_goog_2",
+        "question": "What was the total dollar amount spent by Alphabet on Class C share repurchases in 2023?",
+        "target_doc": "sec_alphabet_10k_2023",
+        "evidence_phrase": "class c share repurchases",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "2806b42e-2585-eaac-402a-7fe7dff11714",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Share Repurchases\nIn the years ended December 31, 2021, 2022, and 2023 , we repurchased $ 50.3 billi"
+          },
+          {
+            "chunk_id": "ccf1aa8e-4e8f-5830-ceb7-033277085138",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "As of December 31, 2023, we had senior unsecured notes outstanding with a total carrying value of $1"
+          },
+          {
+            "chunk_id": "a6e3911a-ee86-c9f9-118b-56c0cc23c892",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 5 - Market for Registrant's Common Equity and Related Stockholder Matters",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "25.\nTable of Contents | Alphabet Inc.\nIssuer Purchases of Equity Securities\nThe following table pres"
+          }
+        ]
+      },
+      {
+        "id": "q_goog_3",
+        "question": "What components make up Google Services and Google Cloud revenues within Alphabet?",
+        "target_doc": "sec_alphabet_10k_2023",
+        "evidence_phrase": "google services and google cloud, and",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "8816c992-929d-7b7b-58b5-dc689197bc27",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "Google Cloud\nGoogle Cloud revenues are comprised of the following:\n\u2022 Google Cloud Platform, which ge"
+          },
+          {
+            "chunk_id": "bd8d1c64-654f-76e1-c9de-d4b3efec054e",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "\u2022 Google Cloud includes infrastructure and platform services, collaboration tools, and other service"
+          },
+          {
+            "chunk_id": "24f8cf96-b3f4-7ea0-6724-1e1e2536a48d",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "56.\nTable of Contents | Alphabet Inc.\nand amounts paid to Google Network partners are recorded as co"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_1",
+        "question": "What risks does Amazon face in connection with its government contracts and procurement regulations?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "government contracts and related procurement regulations",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "265580be-1c83-6b32-92ea-fb88b9d4c8cc",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "We Are Subject to Risks Related to Government Contracts and Related Procurement Regulations\nOur cont"
+          },
+          {
+            "chunk_id": "4cd2568b-12b1-de47-4ef3-9192f0dedd5a",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Our business with government customers may present additional uncertainties. We derive substantial r"
+          },
+          {
+            "chunk_id": "56c134b1-4a06-f2bc-91d8-33b66a82ffe8",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.031,
+            "snippet": "14\nTable of Contents\nexisting laws governing issues such as property ownership, libel, privacy, data"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_2",
+        "question": "What proceeds did Amazon receive from property and equipment sales and incentives in 2023?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "proceeds from property and equipment sales",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "7e6ba915-d909-f96a-0d0e-37f5814073e6",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Proceeds from property and equipment sales and incentives | 5,657 | 5,324 | 4,596\nAcquisitions, net"
+          },
+          {
+            "chunk_id": "69e1ed69-cf71-f69c-aaf0-3c32695508b2",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Seattle, Washington\nFebruary 1, 2024\n36\nTable of Contents\nAMAZON.COM, INC.\nCONSOLIDATED STATEMENTS O"
+          },
+          {
+            "chunk_id": "48258832-ee4c-f217-2282-2ac63fdc04bb",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0308,
+            "snippet": "Year Ended December 31,\n2022 | 2023\nNet cash provided by (used in) operating activities | $ | 46,752"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_3",
+        "question": "How did Amazon describe AWS segment sales growth and operational focus during 2023?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "aws segment are primarily classified as",
+        "matched_rank": 10,
+        "top_retrievals": [
+          {
+            "chunk_id": "eaeb2adb-5c79-8015-55e0-e52e4a5f8597",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Results of Operations\nWe have organized our operations into three segments: North America, Internati"
+          },
+          {
+            "chunk_id": "33d65e0f-ef28-04b5-1932-30060607c2ea",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "24\nTable of Contents\nAWS sales increased 13% in 2023, compared to the prior year. The sales growth p"
+          },
+          {
+            "chunk_id": "d604c8b6-0f2e-7d3b-a458-9fb0254e7ec8",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "Consolidated | $ | 513,983 | $ | 574,785\nYear-over-year Percentage Growth (Decline):\nNorth America |"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_4",
+        "question": "How does Amazon handle unearned revenue and long-term customer contractual obligations?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "unearned revenue | 2,314 | 2,216",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "3e9c8d43-cc38-149f-f2b1-6e08f6600841",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "50\nTable of Contents\n2023. As of December 31, 2022 and 2023, our total self-insurance liabilities we"
+          },
+          {
+            "chunk_id": "d3c0fd70-ae63-eb48-c71b-65367dae25f6",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Unearned Revenue\nUnearned revenue comprises mainly unearned revenue related to volume licensing prog"
+          },
+          {
+            "chunk_id": "34fbbcae-8945-a015-f0ae-5a718c95d6a7",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "Unearned revenue comprises mainly unearned revenue related to volume licensing programs, which may i"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_1",
+        "question": "What relationship and transactions does AMD maintain with its ATMP joint ventures?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "purchases from the atmp jv during",
+        "matched_rank": 6,
+        "top_retrievals": [
+          {
+            "chunk_id": "c689ab15-5881-4ca1-8ac0-81c0d5a8a00a",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "We are a party to a wafer supply agreement (WSA) with GF that governs the terms by which we purchase"
+          },
+          {
+            "chunk_id": "69cf7ea6-ed78-d31d-2957-3c6a4a3dc57f",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0305,
+            "snippet": "We also work with industry leaders on process technology, design tools, intellectual property, softw"
+          },
+          {
+            "chunk_id": "879dd07c-5b02-2833-171b-83eb67173314",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0301,
+            "snippet": "*In the second quarter of fiscal year 2022, the Company reassigned goodwill balances among the updat"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_2",
+        "question": "What impact did the Xilinx acquisition have on AMD's amortization of acquired intangible assets in 2023?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "xilinx, xdna, zynq and combinations",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "8f48a2e9-2749-d03a-6dd1-33fd0cc3e749",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "Against the backdrop of a mixed demand environment, net revenue for 2023 was $22.7 billion, a decrea"
+          },
+          {
+            "chunk_id": "45d65a11-a3ce-c8b3-8b20-927306cbcf79",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0312,
+            "snippet": "NOTE 6 \u2013 Acquisition-related Intangible Assets and Goodwill\nAcquisition-related Intangible Assets\nAc"
+          },
+          {
+            "chunk_id": "18a95b60-aac4-c09d-28be-6c30bf14c2c6",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0306,
+            "snippet": "Xilinx Acquisition\nOn February 14, 2022 (Xilinx Acquisition Date), the Company completed the acquisi"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_3",
+        "question": "What was AMD's Data Center segment net revenue in 2023 compared to 2022?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "data center segment revenue primarily driven",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "8f48a2e9-2749-d03a-6dd1-33fd0cc3e749",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Against the backdrop of a mixed demand environment, net revenue for 2023 was $22.7 billion, a decrea"
+          },
+          {
+            "chunk_id": "ac7051d0-fab3-d367-182d-983c9275cf36",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "In addition, the calculation of our tax liabilities involves addressing uncertainties in the applica"
+          },
+          {
+            "chunk_id": "4c272127-b2e7-121e-daa5-8a45b4cd35a7",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "Data Center operating income was $1.3 billion in 2023, compared to operating income of $1.8 billion"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_4",
+        "question": "How did AMD's Client and Gaming segments perform due to inventory adjustments and PC demand?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "cautionary statement regarding forward-looking statements",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "7f7804ea-9071-65e7-836f-7fb4b5379dff",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "The demand for our products depends in part on the market conditions in the industries into which th"
+          },
+          {
+            "chunk_id": "141b5a6f-8c16-9feb-fd07-ceda82869c44",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "4\nTable of Contents\nClient Segment\nClient Market\nOur CPUs are incorporated into computing platforms,"
+          },
+          {
+            "chunk_id": "8f48a2e9-2749-d03a-6dd1-33fd0cc3e749",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0299,
+            "snippet": "Against the backdrop of a mixed demand environment, net revenue for 2023 was $22.7 billion, a decrea"
+          }
+        ]
+      },
+      {
+        "id": "q_meta_1",
+        "question": "What is Meta's operational focus and financial performance within the Reality Labs segment?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "reality labs (rl). currently, we generate",
+        "matched_rank": 6,
+        "top_retrievals": [
+          {
+            "chunk_id": "2637d8d5-f09b-f62a-4e86-7c5dab48088c",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "See Accompanying Notes to Consolidated Financial Statements.\n94\nTable of Contents\nMETA PLATFORMS, IN"
+          },
+          {
+            "chunk_id": "9a9f15f2-0084-e317-ba3b-633de608ef39",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "We incur significant expenses in operating our business, and some of our investments, particularly o"
+          },
+          {
+            "chunk_id": "749433c9-87ec-abc5-12b8-c489fb8e1154",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0305,
+            "snippet": "Overview\nOur mission is to give people the power to build community and bring the world closer toget"
+          }
+        ]
+      },
+      {
+        "id": "q_meta_2",
+        "question": "How did Meta's ad impressions and average price per ad change across its Family of Apps in 2023?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "ad impressions, particularly for facebook an",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "720ef1f3-e377-bfd1-e3e5-0b4ce5d05a7b",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Total revenue | $ | 134,902 | $ | 116,609 | $ | 117,929 | 16 | % | (1) | %\nFamily of Apps\nFoA revenu"
+          },
+          {
+            "chunk_id": "8322afbe-d012-033f-5839-e735348d7912",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "\u2022 Facebook monthly active users (MAUs) were 3.07 billion as of December 31, 2023, an increase of 3%"
+          },
+          {
+            "chunk_id": "d0758c53-8718-b41d-fc3c-0de620598bff",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0313,
+            "snippet": "Cost of revenue | $ | 177 | $ | \u2014 | $ | (224) | $ | (47)\nResearch and development | 1,581 | 413 | \u2014"
+          }
+        ]
+      },
+      {
+        "id": "q_meta_3",
+        "question": "What does Meta disclose regarding antitrust and consumer protection claims by the Federal Trade Commission?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "federal trade commission (ftc), which took",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "0923f44d-e041-4683-73c5-6df7d49ec337",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Competition\nWe are subject to various litigation and government inquiries and investigations, formal"
+          },
+          {
+            "chunk_id": "ff844a8b-ec41-e539-7645-de49eff31683",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 3 - Legal Proceedings",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "Competition\nWe are subject to various litigation and government inquiries and investigations, formal"
+          },
+          {
+            "chunk_id": "26244685-b6bd-57a9-849d-7a19ce2b7e40",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 105,
+            "score": 0.0287,
+            "snippet": "105 \nmarket conditions, new technologies, new transaction structures, and emergent risks. In this \nr"
+          }
+        ]
+      },
+      {
+        "id": "q_meta_4",
+        "question": "What products constitute Meta's Family of Apps and how are they monetized?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "family of apps (foa) and reality",
+        "matched_rank": 2,
+        "top_retrievals": [
+          {
+            "chunk_id": "ba8718eb-bc97-f084-2779-acb0c4a787ce",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "The majority of our investments are directed toward developing our family of apps. In 2023, 80% of o"
+          },
+          {
+            "chunk_id": "2637d8d5-f09b-f62a-4e86-7c5dab48088c",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "See Accompanying Notes to Consolidated Financial Statements.\n94\nTable of Contents\nMETA PLATFORMS, IN"
+          },
+          {
+            "chunk_id": "749433c9-87ec-abc5-12b8-c489fb8e1154",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0306,
+            "snippet": "Overview\nOur mission is to give people the power to build community and bring the world closer toget"
+          }
+        ]
+      },
+      {
+        "id": "q_eo_1",
+        "question": "What mitigation measures does EO 14110 specify regarding chemical, biological, radiological, or nuclear (CBRN) threats in AI?",
+        "target_doc": "whitehouse_eo_14110_ai",
+        "evidence_phrase": "chemical, biological, radiological",
+        "matched_rank": 5,
+        "top_retrievals": [
+          {
+            "chunk_id": "4ec55cb7-7ef9-96ba-de9d-d890f374e071",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 10,
+            "score": 0.0325,
+            "snippet": "the development or use of CBRN threats\u2014with a particular focus on biological \nweapons\u2014the following"
+          },
+          {
+            "chunk_id": "6fe18da7-3b53-596a-9289-49f7a77f2f0f",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 10,
+            "score": 0.0315,
+            "snippet": "sections 4.3(b)(ii) and (iii) of this section for national security systems, \nand the Secretary of H"
+          },
+          {
+            "chunk_id": "fa7dea83-702b-a1c0-62da-5c5d7ea6af9a",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 11,
+            "score": 0.0315,
+            "snippet": "75201 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \nth"
+          }
+        ]
+      },
+      {
+        "id": "q_eo_2",
+        "question": "What are the reporting obligations for companies training dual-use foundation models regarding AI red-teaming?",
+        "target_doc": "whitehouse_eo_14110_ai",
+        "evidence_phrase": "red-teaming\u2019\u2019 means a structured testing",
+        "matched_rank": 3,
+        "top_retrievals": [
+          {
+            "chunk_id": "34820c20-36a1-e642-3432-64c77e8aa0ce",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 7,
+            "score": 0.0328,
+            "snippet": "75197 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \ndo"
+          },
+          {
+            "chunk_id": "1e498b80-734b-3a4f-c9ec-7505f9adbc32",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 6,
+            "score": 0.0323,
+            "snippet": "and trustworthy AI systems, including: \n(A) developing a companion resource to the AI Risk Managemen"
+          },
+          {
+            "chunk_id": "e9a206bc-f8b5-9b45-8cd5-07298d428277",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 4,
+            "score": 0.0306,
+            "snippet": "75194 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \n(d"
+          }
+        ]
+      },
+      {
+        "id": "q_eo_3",
+        "question": "What role do federal agencies have in developing safety standards and guidance under EO 14110?",
+        "target_doc": "whitehouse_eo_14110_ai",
+        "evidence_phrase": "federal government-wide approach to doing so.",
+        "matched_rank": 7,
+        "top_retrievals": [
+          {
+            "chunk_id": "f64ea2b9-5631-9232-af3b-38db27cfaa16",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 10,
+            "score": 0.0328,
+            "snippet": "75200 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \nAI"
+          },
+          {
+            "chunk_id": "34820c20-36a1-e642-3432-64c77e8aa0ce",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 7,
+            "score": 0.032,
+            "snippet": "75197 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \ndo"
+          },
+          {
+            "chunk_id": "2efa28c7-202a-3ed2-0d0c-f1c6b327b14d",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 28,
+            "score": 0.0301,
+            "snippet": "of OMB, in coordination with the Director of OSTP, and in consultation \nwith the interagency council"
+          }
+        ]
+      },
+      {
+        "id": "q_sec18_1",
+        "question": "What restrictions does the 2018 SEC guidance place on insider trading while aware of undisclosed cybersecurity incidents?",
+        "target_doc": "sec_cybersecurity_guidance_2018",
+        "evidence_phrase": "insiders must not trade a public",
+        "matched_rank": 3,
+        "top_retrievals": [
+          {
+            "chunk_id": "7be3d719-4514-90ae-e9db-21f83062c6a3",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 6,
+            "score": 0.0325,
+            "snippet": "6 \n(Disclosure controls and procedures), as well as to Accounting Standards Codifications 350-40 \n(I"
+          },
+          {
+            "chunk_id": "488e7a78-50d9-e4ae-9c9c-bed13814af80",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 22,
+            "score": 0.0315,
+            "snippet": "22 \n \nand insider trading policies take into account and prevent trading on the basis of material \nn"
+          },
+          {
+            "chunk_id": "61f70c02-c8eb-ea0b-ab7c-6d079ff1d3f6",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 5,
+            "score": 0.0311,
+            "snippet": "5 \n \nfaced or is likely to face. \nAdditionally, directors, officers, and other corporate insiders mu"
+          }
+        ]
+      },
+      {
+        "id": "q_sec18_2",
+        "question": "What are the requirements for public companies to maintain robust disclosure controls and procedures for cyber risks?",
+        "target_doc": "sec_cybersecurity_guidance_2018",
+        "evidence_phrase": "controls and procedures that provide an",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "b80a6d3e-9304-5c86-ce2f-fad2ea02e11f",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 4,
+            "score": 0.0328,
+            "snippet": "4 \n \n\u2022 lost revenues resulting from the unauthorized use of proprietary information or \nthe failure"
+          },
+          {
+            "chunk_id": "aa774736-6146-89d0-f20b-40e44a93b017",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 20,
+            "score": 0.0313,
+            "snippet": "20 \n \nevaluated in the context of the disclosure requirement of Exchange Act Rule 12b-20.54 When \nde"
+          },
+          {
+            "chunk_id": "3150e7e3-793b-f6f1-95b4-b90018214e54",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 125,
+            "score": 0.0308,
+            "snippet": "125 \ncybersecurity risk management, strategy, and governance. The final rules require disclosure \nre"
+          }
+        ]
+      },
+      {
+        "id": "q_sec18_3",
+        "question": "How should the board of directors disclose its role in cybersecurity risk oversight?",
+        "target_doc": "sec_cybersecurity_guidance_2018",
+        "evidence_phrase": "board of directors\u2019 role in the",
+        "matched_rank": 7,
+        "top_retrievals": [
+          {
+            "chunk_id": "ed4b11a7-d25d-b042-b47f-efd3f3146219",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 18,
+            "score": 0.0328,
+            "snippet": "18 \n \ninvestors about how a company perceives the role of its board and the relationship between the"
+          },
+          {
+            "chunk_id": "1d877b6d-ed26-a8d9-4206-31eb2944757e",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 171,
+            "score": 0.0313,
+            "snippet": "171 \naffect the registrant, including its business strategy, results of operations, or financial con"
+          },
+          {
+            "chunk_id": "efec490e-14fa-740c-942f-8cec4bda8fff",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 69,
+            "score": 0.0306,
+            "snippet": "69 \nmanagement, and financial oversight. While we have also removed the proposed Item \n106(c)(1)(ii)"
+          }
+        ]
+      },
+      {
+        "id": "q_sec23_1",
+        "question": "What are the reporting requirements under Form 8-K Item 1.05 for material cybersecurity incidents?",
+        "target_doc": "sec_cybersecurity_final_rule_2023",
+        "evidence_phrase": "item 1.05",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "1b312cd9-47ba-2dc7-88d1-76338fce9369",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 12,
+            "score": 0.0325,
+            "snippet": "12 \nItem Summary Description of the Disclosure Requirement30 \nRegulation S-K Item 106(b) \u2013 \nRisk man"
+          },
+          {
+            "chunk_id": "d289dadf-6975-3fed-7959-0214da8ab5d8",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 51,
+            "score": 0.0315,
+            "snippet": "51 \ninformation called for in Item 1.05(a) that is not determined or is unavailable at the time of t"
+          },
+          {
+            "chunk_id": "3c5af278-1584-c43d-3564-c9d627c70a93",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 124,
+            "score": 0.031,
+            "snippet": "124 \nin less reporting and less information released to the market . The mandatory disclosure in Ite"
+          }
+        ]
+      },
+      {
+        "id": "q_sec23_2",
+        "question": "How does the SEC address potential conflicts between Item 1.05 and the Cyber Incident Reporting for Critical Infrastructure Act (CIRCIA)?",
+        "target_doc": "sec_cybersecurity_final_rule_2023",
+        "evidence_phrase": "circia\u201d)19 on march 15, 2022, as",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "463e0b3f-587f-b2a7-97ad-5783385a52b4",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 9,
+            "score": 0.0325,
+            "snippet": "9 \nLegislatively, we note two significant developments occurred following publication of \nthe Propos"
+          },
+          {
+            "chunk_id": "178203ec-271c-7067-6d08-de08d5f3a56e",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 43,
+            "score": 0.032,
+            "snippet": "43 \nWe also considered the conflicts commenters alleged with CIRCIA. Specifically, they \nstated that"
+          },
+          {
+            "chunk_id": "8ac6081f-fd13-21d8-c6d2-adc802f917bf",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 45,
+            "score": 0.0317,
+            "snippet": "45 \nsubject matter, Item 1.05 neither conflicts with nor impedes the purpose of those regulations an"
+          }
+        ]
+      },
+      {
+        "id": "q_sec23_3",
+        "question": "Under what circumstances may the Attorney General delay a public company's Item 1.05 cybersecurity disclosure?",
+        "target_doc": "sec_cybersecurity_final_rule_2023",
+        "evidence_phrase": "attorney general determines that the disclosure",
+        "matched_rank": 2,
+        "top_retrievals": [
+          {
+            "chunk_id": "8f659b83-3015-7aec-0e9b-0b6e8eec502d",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 184,
+            "score": 0.0328,
+            "snippet": "184 \n* * * * * \nItem 1.05 Material Cybersecurity Incidents. \n(a) If the registrant experiences a cyb"
+          },
+          {
+            "chunk_id": "608fbb45-b891-c824-f49a-fd78016580e0",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 34,
+            "score": 0.032,
+            "snippet": "34 \nrationale to return to bifurcated deadlines.127 Form 8-K provides for current reporting of event"
+          },
+          {
+            "chunk_id": "511c3836-3bd9-0709-5ab4-885e8cd16090",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 123,
+            "score": 0.0318,
+            "snippet": "123 \nup to an additional 30 days if the Attorney General determines disclosure continues to pose a"
+          }
+        ]
+      }
+    ]
+  },
+  "new_chunk_level_filtered": {
+    "match_mode": "chunk",
+    "use_doc_filter": true,
+    "total_evaluated": 34,
+    "hits_at_1": 13,
+    "hits_at_3": 20,
+    "hits_at_5": 21,
+    "hits_at_10": 26,
+    "recall_at_1": 0.3824,
+    "recall_at_3": 0.5882,
+    "recall_at_5": 0.6176,
+    "recall_at_10": 0.7647,
+    "mrr": 0.502,
+    "details": [
+      {
+        "id": "q_aapl_1",
+        "question": "What risks does Apple disclose regarding cellular carrier financing and subsidy plans?",
+        "target_doc": "sec_apple_10k_2023",
+        "evidence_phrase": "carriers providing cellular network service for",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "9c6e1ce3-931a-bd07-188b-6d6fbe1f4b49",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Some carriers providing cellular network service for the Company\u2019s products offer financing, install"
+          },
+          {
+            "chunk_id": "48d4db4b-8207-f28e-d1a6-6eb95009852c",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Apple Inc. | 2023 Form 10-K | 15\nThe Company is exposed to credit risk on its trade accounts receiva"
+          },
+          {
+            "chunk_id": "daa4e9a2-3e8d-7d5f-66d3-588169b004bf",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0313,
+            "snippet": "2023 | 2022\nHedged assets/(liabilities):\nCurrent and non-current marketable securities | $ | 14,433"
+          }
+        ]
+      },
+      {
+        "id": "q_aapl_2",
+        "question": "What was Apple's total undiscounted liabilities and imputed interest reported in Note 7?",
+        "target_doc": "sec_apple_10k_2023",
+        "evidence_phrase": "total undiscounted liabilities | 13,841 |",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "b8ad16d0-a75a-93b7-0560-ab5ab322c7e6",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "The following table shows ROU assets and lease liabilities, and the associated financial statement l"
+          },
+          {
+            "chunk_id": "3445be21-c900-f61d-ec4d-5a930060821c",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "Apple Inc. | 2023 Form 10-K | 38\nNote 5 \u2013 Property, Plant and Equipment\nThe following table shows th"
+          },
+          {
+            "chunk_id": "84181010-f28b-fad6-7bf0-43239f857bee",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0313,
+            "snippet": "Total non-current assets | 209,017 | 217,350\nTotal assets | $ | 352,583 | $ | 352,755\nLIABILITIES AN"
+          }
+        ]
+      },
+      {
+        "id": "q_aapl_3",
+        "question": "How did Apple's selling, general, and administrative expenses change between 2022 and 2023?",
+        "target_doc": "sec_apple_10k_2023",
+        "evidence_phrase": "selling, general and administrative expense was",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "c25218cf-5f2f-cda2-8737-601e6d89993f",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Services gross margin percentage decreased during 2023 compared to 2022 due to higher Services costs"
+          },
+          {
+            "chunk_id": "d6d2eede-79ae-4c1d-6823-3317c3f4c2bc",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "Selling, general and administrative expense was relatively flat in 2023 compared to 2022.\nApple Inc."
+          },
+          {
+            "chunk_id": "516a7c0f-2c94-76d1-ff06-e1f660c61600",
+            "doc_id": "sec_apple_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "A reconciliation of the Company\u2019s segment operating income to the Consolidated Statements of Operati"
+          }
+        ]
+      },
+      {
+        "id": "q_msft_1",
+        "question": "What are the terms and regulatory considerations regarding Microsoft's proposed acquisition of Activision Blizzard?",
+        "target_doc": "sec_microsoft_10k_2023",
+        "evidence_phrase": "activision blizzard, inc., a leader in",
+        "matched_rank": 2,
+        "top_retrievals": [
+          {
+            "chunk_id": "368827c4-cac0-1a9f-cc9e-1309f0778c51",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Following are details of the purchase price allocated to the intangible assets acquired:\n(In million"
+          },
+          {
+            "chunk_id": "27a453a4-8739-4ada-10ce-21fe26f71cbd",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "We are committed to designing and marketing first-party devices to help drive innovation, create new"
+          },
+          {
+            "chunk_id": "82e55f33-8a7a-557d-efac-30e5e5df2259",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "In fiscal year 2023, we paid cash tax of $4.8 billion due to the mandatory capitalization for tax pu"
+          }
+        ]
+      },
+      {
+        "id": "q_msft_2",
+        "question": "What was Microsoft's commercial remaining performance obligation (RPO) balance as of June 30, 2023?",
+        "target_doc": "sec_microsoft_10k_2023",
+        "evidence_phrase": "remaining performance obligation | commercial portion",
+        "matched_rank": 3,
+        "top_retrievals": [
+          {
+            "chunk_id": "02e8657a-5111-f403-f4eb-b2cea4d935b1",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "Changes in unearned revenue were as follows:\n(In millions)\nYear Ended June 30, 2023\nBalance, beginni"
+          },
+          {
+            "chunk_id": "10f726df-46ba-baed-79b5-e61c41dafdfe",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "(In millions)\nJune 30, | 2023 | 2022 | 2021\nUnited States | $ | 114,380 | $ | 106,430 | $ | 76,153\nI"
+          },
+          {
+            "chunk_id": "fd56689d-fc08-1369-369a-e99acca272a0",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Commercial remaining performance obligation | Commercial portion of revenue allocated to remaining p"
+          }
+        ]
+      },
+      {
+        "id": "q_msft_3",
+        "question": "How does Microsoft characterize datacenter capacity needs and infrastructure investments for cloud and AI?",
+        "target_doc": "sec_microsoft_10k_2023",
+        "evidence_phrase": "datacenter capacity to support the delivery",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "090a3775-1b6e-867c-67f8-fa0412b85de0",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "We have a long-term partnership with OpenAI, a leading AI research and deployment company. We deploy"
+          },
+          {
+            "chunk_id": "971676d1-e3f0-f719-8a8c-375774118953",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "40\nPART II\nItem 7\nEconomic Conditions, Challenges, and Risks\nThe markets for software, devices, and"
+          },
+          {
+            "chunk_id": "cdadebbb-f442-1c52-93d4-4681136c3249",
+            "doc_id": "sec_microsoft_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "Build the Intelligent Cloud and Intelligent Edge Platform\nAs digital transformation and adoption of"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_1",
+        "question": "What export control licensing requirements did the US government impose on NVIDIA's high-performance GPUs shipped to China?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "licensing requirements that, with certain exceptions,",
+        "matched_rank": 7,
+        "top_retrievals": [
+          {
+            "chunk_id": "334e8dee-626e-df60-2d53-464ab3921147",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "During the third quarter of fiscal year 2023, the USG announced export restrictions and export licen"
+          },
+          {
+            "chunk_id": "92f4e46b-6114-3e55-a448-a3e4e0448679",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Given the increasing strategic importance of AI and rising geopolitical tensions, the USG has change"
+          },
+          {
+            "chunk_id": "e6a91c1a-2c24-b307-7359-6c10a2bec528",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0308,
+            "snippet": "Following these export controls, we transitioned some operations, including certain testing, validat"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_2",
+        "question": "What were NVIDIA's Data Center segment revenues in fiscal year 2024?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "data center revenue from 19% in",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "10f77ab2-aaa9-8afa-1d6a-18ba924320da",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Operating expenses increased for fiscal year 2024, driven by growth in employees and compensation in"
+          },
+          {
+            "chunk_id": "2fe7a323-62a8-52dc-76d2-4f733211a023",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Operating income | $ | 32,972 | $ | 4,224 | Up 681%\nNet income | $ | 29,760 | $ | 4,368 | Up 581%\nNe"
+          },
+          {
+            "chunk_id": "d252c478-915e-6249-f6b8-dcb70e1b2aee",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0312,
+            "snippet": "Graphics | 5,846 | 4,552 | 1,294 | 28 | %\nAll Other | (4,890) | (5,411) | 521 | (10) | %\nTotal | $ |"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_3",
+        "question": "How did NVIDIA describe customer adoption and demand for the Hopper architecture GPUs?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "hopper architecture products is improving, and",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "cfef2979-ff96-ca78-7ace-e60a51cd3839",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "Headquartered in Santa Clara, California, NVIDIA was incorporated in California in April 1993 and re"
+          },
+          {
+            "chunk_id": "10f77ab2-aaa9-8afa-1d6a-18ba924320da",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Operating expenses increased for fiscal year 2024, driven by growth in employees and compensation in"
+          },
+          {
+            "chunk_id": "2e76cdcb-3af3-b839-caca-de0cf5197ca5",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "NVIDIA has a platform strategy, bringing together hardware, systems, software, algorithms, libraries"
+          }
+        ]
+      },
+      {
+        "id": "q_nvda_4",
+        "question": "What are NVIDIA's two primary reportable operating segments and their primary end markets?",
+        "target_doc": "sec_nvidia_10k_2024",
+        "evidence_phrase": "compute & networking segment is comprised",
+        "matched_rank": 2,
+        "top_retrievals": [
+          {
+            "chunk_id": "13bed013-12b5-daff-70a0-a2c121ad98cc",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 15 - Exhibits, Financial Statement Schedules",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "77\nTable of Contents\nNVIDIA Corporation and Subsidiaries\nNotes to the Consolidated Financial Stateme"
+          },
+          {
+            "chunk_id": "cf0a6bf3-2a30-41e9-04d8-0ee6b20f997d",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Professional artists, architects and designers use NVIDIA partner products accelerated with our GPUs"
+          },
+          {
+            "chunk_id": "2e76cdcb-3af3-b839-caca-de0cf5197ca5",
+            "doc_id": "sec_nvidia_10k_2024",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "NVIDIA has a platform strategy, bringing together hardware, systems, software, algorithms, libraries"
+          }
+        ]
+      },
+      {
+        "id": "q_goog_1",
+        "question": "How could Internet service providers restricting access affect Alphabet's advertising and cloud businesses?",
+        "target_doc": "sec_alphabet_10k_2023",
+        "evidence_phrase": "internet access providers may be able",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "b0d62c8f-4baf-1185-450b-a394d6754d66",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Our business depends on continued and unimpeded access to the Internet by us and our users. Internet"
+          },
+          {
+            "chunk_id": "bc659a59-d81d-6f9c-7dcd-7debd9e2a1ab",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "If we fail to either detect and prevent an increase in problematic content or effectively promote hi"
+          },
+          {
+            "chunk_id": "6068eb29-e817-bda5-5956-87a0ca642bb9",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0299,
+            "snippet": "\u2022 companies that design, manufacture, and market consumer hardware products, including businesses th"
+          }
+        ]
+      },
+      {
+        "id": "q_goog_2",
+        "question": "What was the total dollar amount spent by Alphabet on Class C share repurchases in 2023?",
+        "target_doc": "sec_alphabet_10k_2023",
+        "evidence_phrase": "class c share repurchases",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "2806b42e-2585-eaac-402a-7fe7dff11714",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Share Repurchases\nIn the years ended December 31, 2021, 2022, and 2023 , we repurchased $ 50.3 billi"
+          },
+          {
+            "chunk_id": "ccf1aa8e-4e8f-5830-ceb7-033277085138",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "As of December 31, 2023, we had senior unsecured notes outstanding with a total carrying value of $1"
+          },
+          {
+            "chunk_id": "a6e3911a-ee86-c9f9-118b-56c0cc23c892",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 5 - Market for Registrant's Common Equity and Related Stockholder Matters",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "25.\nTable of Contents | Alphabet Inc.\nIssuer Purchases of Equity Securities\nThe following table pres"
+          }
+        ]
+      },
+      {
+        "id": "q_goog_3",
+        "question": "What components make up Google Services and Google Cloud revenues within Alphabet?",
+        "target_doc": "sec_alphabet_10k_2023",
+        "evidence_phrase": "google services and google cloud, and",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "8816c992-929d-7b7b-58b5-dc689197bc27",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "Google Cloud\nGoogle Cloud revenues are comprised of the following:\n\u2022 Google Cloud Platform, which ge"
+          },
+          {
+            "chunk_id": "bd8d1c64-654f-76e1-c9de-d4b3efec054e",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "\u2022 Google Cloud includes infrastructure and platform services, collaboration tools, and other service"
+          },
+          {
+            "chunk_id": "24f8cf96-b3f4-7ea0-6724-1e1e2536a48d",
+            "doc_id": "sec_alphabet_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "56.\nTable of Contents | Alphabet Inc.\nand amounts paid to Google Network partners are recorded as co"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_1",
+        "question": "What risks does Amazon face in connection with its government contracts and procurement regulations?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "government contracts and related procurement regulations",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "265580be-1c83-6b32-92ea-fb88b9d4c8cc",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "We Are Subject to Risks Related to Government Contracts and Related Procurement Regulations\nOur cont"
+          },
+          {
+            "chunk_id": "56c134b1-4a06-f2bc-91d8-33b66a82ffe8",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "14\nTable of Contents\nexisting laws governing issues such as property ownership, libel, privacy, data"
+          },
+          {
+            "chunk_id": "3c29b3eb-995a-b3d2-3c9b-7c75a57eb9d3",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0313,
+            "snippet": "We are also subject to tax controversies in various jurisdictions that can result in tax assessments"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_2",
+        "question": "What proceeds did Amazon receive from property and equipment sales and incentives in 2023?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "proceeds from property and equipment sales",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "7e6ba915-d909-f96a-0d0e-37f5814073e6",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Proceeds from property and equipment sales and incentives | 5,657 | 5,324 | 4,596\nAcquisitions, net"
+          },
+          {
+            "chunk_id": "69e1ed69-cf71-f69c-aaf0-3c32695508b2",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Seattle, Washington\nFebruary 1, 2024\n36\nTable of Contents\nAMAZON.COM, INC.\nCONSOLIDATED STATEMENTS O"
+          },
+          {
+            "chunk_id": "48258832-ee4c-f217-2282-2ac63fdc04bb",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0308,
+            "snippet": "Year Ended December 31,\n2022 | 2023\nNet cash provided by (used in) operating activities | $ | 46,752"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_3",
+        "question": "How did Amazon describe AWS segment sales growth and operational focus during 2023?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "aws segment are primarily classified as",
+        "matched_rank": 10,
+        "top_retrievals": [
+          {
+            "chunk_id": "eaeb2adb-5c79-8015-55e0-e52e4a5f8597",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Results of Operations\nWe have organized our operations into three segments: North America, Internati"
+          },
+          {
+            "chunk_id": "33d65e0f-ef28-04b5-1932-30060607c2ea",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "24\nTable of Contents\nAWS sales increased 13% in 2023, compared to the prior year. The sales growth p"
+          },
+          {
+            "chunk_id": "d604c8b6-0f2e-7d3b-a458-9fb0254e7ec8",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "Consolidated | $ | 513,983 | $ | 574,785\nYear-over-year Percentage Growth (Decline):\nNorth America |"
+          }
+        ]
+      },
+      {
+        "id": "q_amzn_4",
+        "question": "How does Amazon handle unearned revenue and long-term customer contractual obligations?",
+        "target_doc": "sec_amazon_10k_2023",
+        "evidence_phrase": "unearned revenue | 2,314 | 2,216",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "3e9c8d43-cc38-149f-f2b1-6e08f6600841",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "50\nTable of Contents\n2023. As of December 31, 2022 and 2023, our total self-insurance liabilities we"
+          },
+          {
+            "chunk_id": "9d7c2bb5-0a42-0a0e-7315-54410b819eb6",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0311,
+            "snippet": "43\nTable of Contents\nAdvertising services - We provide advertising services to sellers, vendors, pub"
+          },
+          {
+            "chunk_id": "8d750056-fea3-c88e-1eb3-5fdf1c817245",
+            "doc_id": "sec_amazon_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0308,
+            "snippet": "The following table shows the calculation of diluted shares (in millions):\nYear Ended December 31,\n2"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_1",
+        "question": "What relationship and transactions does AMD maintain with its ATMP joint ventures?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "purchases from the atmp jv during",
+        "matched_rank": 6,
+        "top_retrievals": [
+          {
+            "chunk_id": "c689ab15-5881-4ca1-8ac0-81c0d5a8a00a",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "We are a party to a wafer supply agreement (WSA) with GF that governs the terms by which we purchase"
+          },
+          {
+            "chunk_id": "69cf7ea6-ed78-d31d-2957-3c6a4a3dc57f",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0305,
+            "snippet": "We also work with industry leaders on process technology, design tools, intellectual property, softw"
+          },
+          {
+            "chunk_id": "879dd07c-5b02-2833-171b-83eb67173314",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0301,
+            "snippet": "*In the second quarter of fiscal year 2022, the Company reassigned goodwill balances among the updat"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_2",
+        "question": "What impact did the Xilinx acquisition have on AMD's amortization of acquired intangible assets in 2023?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "xilinx, xdna, zynq and combinations",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "8f48a2e9-2749-d03a-6dd1-33fd0cc3e749",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "Against the backdrop of a mixed demand environment, net revenue for 2023 was $22.7 billion, a decrea"
+          },
+          {
+            "chunk_id": "45d65a11-a3ce-c8b3-8b20-927306cbcf79",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0312,
+            "snippet": "NOTE 6 \u2013 Acquisition-related Intangible Assets and Goodwill\nAcquisition-related Intangible Assets\nAc"
+          },
+          {
+            "chunk_id": "18a95b60-aac4-c09d-28be-6c30bf14c2c6",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0308,
+            "snippet": "Xilinx Acquisition\nOn February 14, 2022 (Xilinx Acquisition Date), the Company completed the acquisi"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_3",
+        "question": "What was AMD's Data Center segment net revenue in 2023 compared to 2022?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "data center segment revenue primarily driven",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "8f48a2e9-2749-d03a-6dd1-33fd0cc3e749",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Against the backdrop of a mixed demand environment, net revenue for 2023 was $22.7 billion, a decrea"
+          },
+          {
+            "chunk_id": "4c272127-b2e7-121e-daa5-8a45b4cd35a7",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "Data Center operating income was $1.3 billion in 2023, compared to operating income of $1.8 billion"
+          },
+          {
+            "chunk_id": "ac7051d0-fab3-d367-182d-983c9275cf36",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.032,
+            "snippet": "In addition, the calculation of our tax liabilities involves addressing uncertainties in the applica"
+          }
+        ]
+      },
+      {
+        "id": "q_amd_4",
+        "question": "How did AMD's Client and Gaming segments perform due to inventory adjustments and PC demand?",
+        "target_doc": "sec_amd_10k_2023",
+        "evidence_phrase": "cautionary statement regarding forward-looking statements",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "7f7804ea-9071-65e7-836f-7fb4b5379dff",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "The demand for our products depends in part on the market conditions in the industries into which th"
+          },
+          {
+            "chunk_id": "141b5a6f-8c16-9feb-fd07-ceda82869c44",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0318,
+            "snippet": "4\nTable of Contents\nClient Segment\nClient Market\nOur CPUs are incorporated into computing platforms,"
+          },
+          {
+            "chunk_id": "db497ab7-647c-7792-8e33-2d6f05821c4d",
+            "doc_id": "sec_amd_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0304,
+            "snippet": "We expanded our Embedded processor portfolio with powerful, scalable offerings for a variety of embe"
+          }
+        ]
+      },
+      {
+        "id": "q_meta_1",
+        "question": "What is Meta's operational focus and financial performance within the Reality Labs segment?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "reality labs (rl). currently, we generate",
+        "matched_rank": 6,
+        "top_retrievals": [
+          {
+            "chunk_id": "2637d8d5-f09b-f62a-4e86-7c5dab48088c",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0325,
+            "snippet": "See Accompanying Notes to Consolidated Financial Statements.\n94\nTable of Contents\nMETA PLATFORMS, IN"
+          },
+          {
+            "chunk_id": "9a9f15f2-0084-e317-ba3b-633de608ef39",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1A - Risk Factors",
+            "page": 0,
+            "score": 0.0317,
+            "snippet": "We incur significant expenses in operating our business, and some of our investments, particularly o"
+          },
+          {
+            "chunk_id": "749433c9-87ec-abc5-12b8-c489fb8e1154",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0305,
+            "snippet": "Overview\nOur mission is to give people the power to build community and bring the world closer toget"
+          }
+        ]
+      },
+      {
+        "id": "q_meta_2",
+        "question": "How did Meta's ad impressions and average price per ad change across its Family of Apps in 2023?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "ad impressions, particularly for facebook an",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "720ef1f3-e377-bfd1-e3e5-0b4ce5d05a7b",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Total revenue | $ | 134,902 | $ | 116,609 | $ | 117,929 | 16 | % | (1) | %\nFamily of Apps\nFoA revenu"
+          },
+          {
+            "chunk_id": "8322afbe-d012-033f-5839-e735348d7912",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "\u2022 Facebook monthly active users (MAUs) were 3.07 billion as of December 31, 2023, an increase of 3%"
+          },
+          {
+            "chunk_id": "d0758c53-8718-b41d-fc3c-0de620598bff",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 7 - Management's Discussion and Analysis of Financial Condition and Results of Operations",
+            "page": 0,
+            "score": 0.0315,
+            "snippet": "Cost of revenue | $ | 177 | $ | \u2014 | $ | (224) | $ | (47)\nResearch and development | 1,581 | 413 | \u2014"
+          }
+        ]
+      },
+      {
+        "id": "q_meta_3",
+        "question": "What does Meta disclose regarding antitrust and consumer protection claims by the Federal Trade Commission?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "federal trade commission (ftc), which took",
+        "matched_rank": null,
+        "top_retrievals": [
+          {
+            "chunk_id": "0923f44d-e041-4683-73c5-6df7d49ec337",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0328,
+            "snippet": "Competition\nWe are subject to various litigation and government inquiries and investigations, formal"
+          },
+          {
+            "chunk_id": "ff844a8b-ec41-e539-7645-de49eff31683",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 3 - Legal Proceedings",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "Competition\nWe are subject to various litigation and government inquiries and investigations, formal"
+          },
+          {
+            "chunk_id": "97c1f355-e99a-9f0a-553a-e38cd7265a81",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 3 - Legal Proceedings",
+            "page": 0,
+            "score": 0.0302,
+            "snippet": "On February 14, 2022, the State of Texas filed a lawsuit against us in Texas state court ( Texas v."
+          }
+        ]
+      },
+      {
+        "id": "q_meta_4",
+        "question": "What products constitute Meta's Family of Apps and how are they monetized?",
+        "target_doc": "sec_meta_10k_2023",
+        "evidence_phrase": "family of apps (foa) and reality",
+        "matched_rank": 2,
+        "top_retrievals": [
+          {
+            "chunk_id": "ba8718eb-bc97-f084-2779-acb0c4a787ce",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "The majority of our investments are directed toward developing our family of apps. In 2023, 80% of o"
+          },
+          {
+            "chunk_id": "2637d8d5-f09b-f62a-4e86-7c5dab48088c",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 8 - Financial Statements and Supplementary Data",
+            "page": 0,
+            "score": 0.0323,
+            "snippet": "See Accompanying Notes to Consolidated Financial Statements.\n94\nTable of Contents\nMETA PLATFORMS, IN"
+          },
+          {
+            "chunk_id": "749433c9-87ec-abc5-12b8-c489fb8e1154",
+            "doc_id": "sec_meta_10k_2023",
+            "section": "Item 1 - Business",
+            "page": 0,
+            "score": 0.0306,
+            "snippet": "Overview\nOur mission is to give people the power to build community and bring the world closer toget"
+          }
+        ]
+      },
+      {
+        "id": "q_eo_1",
+        "question": "What mitigation measures does EO 14110 specify regarding chemical, biological, radiological, or nuclear (CBRN) threats in AI?",
+        "target_doc": "whitehouse_eo_14110_ai",
+        "evidence_phrase": "chemical, biological, radiological",
+        "matched_rank": 5,
+        "top_retrievals": [
+          {
+            "chunk_id": "4ec55cb7-7ef9-96ba-de9d-d890f374e071",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 10,
+            "score": 0.0325,
+            "snippet": "the development or use of CBRN threats\u2014with a particular focus on biological \nweapons\u2014the following"
+          },
+          {
+            "chunk_id": "6fe18da7-3b53-596a-9289-49f7a77f2f0f",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 10,
+            "score": 0.0315,
+            "snippet": "sections 4.3(b)(ii) and (iii) of this section for national security systems, \nand the Secretary of H"
+          },
+          {
+            "chunk_id": "fa7dea83-702b-a1c0-62da-5c5d7ea6af9a",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 11,
+            "score": 0.0315,
+            "snippet": "75201 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \nth"
+          }
+        ]
+      },
+      {
+        "id": "q_eo_2",
+        "question": "What are the reporting obligations for companies training dual-use foundation models regarding AI red-teaming?",
+        "target_doc": "whitehouse_eo_14110_ai",
+        "evidence_phrase": "red-teaming\u2019\u2019 means a structured testing",
+        "matched_rank": 3,
+        "top_retrievals": [
+          {
+            "chunk_id": "34820c20-36a1-e642-3432-64c77e8aa0ce",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 7,
+            "score": 0.0328,
+            "snippet": "75197 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \ndo"
+          },
+          {
+            "chunk_id": "1e498b80-734b-3a4f-c9ec-7505f9adbc32",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 6,
+            "score": 0.0323,
+            "snippet": "and trustworthy AI systems, including: \n(A) developing a companion resource to the AI Risk Managemen"
+          },
+          {
+            "chunk_id": "e9a206bc-f8b5-9b45-8cd5-07298d428277",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 4,
+            "score": 0.0308,
+            "snippet": "75194 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \n(d"
+          }
+        ]
+      },
+      {
+        "id": "q_eo_3",
+        "question": "What role do federal agencies have in developing safety standards and guidance under EO 14110?",
+        "target_doc": "whitehouse_eo_14110_ai",
+        "evidence_phrase": "federal government-wide approach to doing so.",
+        "matched_rank": 8,
+        "top_retrievals": [
+          {
+            "chunk_id": "f64ea2b9-5631-9232-af3b-38db27cfaa16",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 10,
+            "score": 0.0328,
+            "snippet": "75200 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \nAI"
+          },
+          {
+            "chunk_id": "34820c20-36a1-e642-3432-64c77e8aa0ce",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 7,
+            "score": 0.032,
+            "snippet": "75197 Federal Register / Vol. 88, No. 210 / Wednesday, November 1, 2023 / Presidential Documents \ndo"
+          },
+          {
+            "chunk_id": "2efa28c7-202a-3ed2-0d0c-f1c6b327b14d",
+            "doc_id": "whitehouse_eo_14110_ai",
+            "section": "page",
+            "page": 28,
+            "score": 0.0301,
+            "snippet": "of OMB, in coordination with the Director of OSTP, and in consultation \nwith the interagency council"
+          }
+        ]
+      },
+      {
+        "id": "q_sec18_1",
+        "question": "What restrictions does the 2018 SEC guidance place on insider trading while aware of undisclosed cybersecurity incidents?",
+        "target_doc": "sec_cybersecurity_guidance_2018",
+        "evidence_phrase": "insiders must not trade a public",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "61f70c02-c8eb-ea0b-ab7c-6d079ff1d3f6",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 5,
+            "score": 0.032,
+            "snippet": "5 \n \nfaced or is likely to face. \nAdditionally, directors, officers, and other corporate insiders mu"
+          },
+          {
+            "chunk_id": "488e7a78-50d9-e4ae-9c9c-bed13814af80",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 22,
+            "score": 0.032,
+            "snippet": "22 \n \nand insider trading policies take into account and prevent trading on the basis of material \nn"
+          },
+          {
+            "chunk_id": "1a0a00ba-3174-494e-0109-5b16885985d9",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 7,
+            "score": 0.0318,
+            "snippet": "7 \n \naccurate and timely disclosures of material events, including those related to cybersecurity. S"
+          }
+        ]
+      },
+      {
+        "id": "q_sec18_2",
+        "question": "What are the requirements for public companies to maintain robust disclosure controls and procedures for cyber risks?",
+        "target_doc": "sec_cybersecurity_guidance_2018",
+        "evidence_phrase": "controls and procedures that provide an",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "b80a6d3e-9304-5c86-ce2f-fad2ea02e11f",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 4,
+            "score": 0.0328,
+            "snippet": "4 \n \n\u2022 lost revenues resulting from the unauthorized use of proprietary information or \nthe failure"
+          },
+          {
+            "chunk_id": "aa774736-6146-89d0-f20b-40e44a93b017",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 20,
+            "score": 0.0315,
+            "snippet": "20 \n \nevaluated in the context of the disclosure requirement of Exchange Act Rule 12b-20.54 When \nde"
+          },
+          {
+            "chunk_id": "1a0a00ba-3174-494e-0109-5b16885985d9",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 7,
+            "score": 0.0313,
+            "snippet": "7 \n \naccurate and timely disclosures of material events, including those related to cybersecurity. S"
+          }
+        ]
+      },
+      {
+        "id": "q_sec18_3",
+        "question": "How should the board of directors disclose its role in cybersecurity risk oversight?",
+        "target_doc": "sec_cybersecurity_guidance_2018",
+        "evidence_phrase": "board of directors\u2019 role in the",
+        "matched_rank": 2,
+        "top_retrievals": [
+          {
+            "chunk_id": "ed4b11a7-d25d-b042-b47f-efd3f3146219",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 18,
+            "score": 0.0328,
+            "snippet": "18 \n \ninvestors about how a company perceives the role of its board and the relationship between the"
+          },
+          {
+            "chunk_id": "bc87c78a-ccd3-52d5-91b2-7eeda64725a7",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 17,
+            "score": 0.032,
+            "snippet": "17 \n \n6. Financial Statement Disclosures \nCybersecurity incidents and the risks that result therefro"
+          },
+          {
+            "chunk_id": "aa774736-6146-89d0-f20b-40e44a93b017",
+            "doc_id": "sec_cybersecurity_guidance_2018",
+            "section": "page",
+            "page": 20,
+            "score": 0.0308,
+            "snippet": "20 \n \nevaluated in the context of the disclosure requirement of Exchange Act Rule 12b-20.54 When \nde"
+          }
+        ]
+      },
+      {
+        "id": "q_sec23_1",
+        "question": "What are the reporting requirements under Form 8-K Item 1.05 for material cybersecurity incidents?",
+        "target_doc": "sec_cybersecurity_final_rule_2023",
+        "evidence_phrase": "item 1.05",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "1b312cd9-47ba-2dc7-88d1-76338fce9369",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 12,
+            "score": 0.0325,
+            "snippet": "12 \nItem Summary Description of the Disclosure Requirement30 \nRegulation S-K Item 106(b) \u2013 \nRisk man"
+          },
+          {
+            "chunk_id": "d289dadf-6975-3fed-7959-0214da8ab5d8",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 51,
+            "score": 0.0315,
+            "snippet": "51 \ninformation called for in Item 1.05(a) that is not determined or is unavailable at the time of t"
+          },
+          {
+            "chunk_id": "3c5af278-1584-c43d-3564-c9d627c70a93",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 124,
+            "score": 0.031,
+            "snippet": "124 \nin less reporting and less information released to the market . The mandatory disclosure in Ite"
+          }
+        ]
+      },
+      {
+        "id": "q_sec23_2",
+        "question": "How does the SEC address potential conflicts between Item 1.05 and the Cyber Incident Reporting for Critical Infrastructure Act (CIRCIA)?",
+        "target_doc": "sec_cybersecurity_final_rule_2023",
+        "evidence_phrase": "circia\u201d)19 on march 15, 2022, as",
+        "matched_rank": 1,
+        "top_retrievals": [
+          {
+            "chunk_id": "463e0b3f-587f-b2a7-97ad-5783385a52b4",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 9,
+            "score": 0.0325,
+            "snippet": "9 \nLegislatively, we note two significant developments occurred following publication of \nthe Propos"
+          },
+          {
+            "chunk_id": "178203ec-271c-7067-6d08-de08d5f3a56e",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 43,
+            "score": 0.032,
+            "snippet": "43 \nWe also considered the conflicts commenters alleged with CIRCIA. Specifically, they \nstated that"
+          },
+          {
+            "chunk_id": "8ac6081f-fd13-21d8-c6d2-adc802f917bf",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 45,
+            "score": 0.0317,
+            "snippet": "45 \nsubject matter, Item 1.05 neither conflicts with nor impedes the purpose of those regulations an"
+          }
+        ]
+      },
+      {
+        "id": "q_sec23_3",
+        "question": "Under what circumstances may the Attorney General delay a public company's Item 1.05 cybersecurity disclosure?",
+        "target_doc": "sec_cybersecurity_final_rule_2023",
+        "evidence_phrase": "attorney general determines that the disclosure",
+        "matched_rank": 2,
+        "top_retrievals": [
+          {
+            "chunk_id": "8f659b83-3015-7aec-0e9b-0b6e8eec502d",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 184,
+            "score": 0.0328,
+            "snippet": "184 \n* * * * * \nItem 1.05 Material Cybersecurity Incidents. \n(a) If the registrant experiences a cyb"
+          },
+          {
+            "chunk_id": "608fbb45-b891-c824-f49a-fd78016580e0",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 34,
+            "score": 0.032,
+            "snippet": "34 \nrationale to return to bifurcated deadlines.127 Form 8-K provides for current reporting of event"
+          },
+          {
+            "chunk_id": "511c3836-3bd9-0709-5ab4-885e8cd16090",
+            "doc_id": "sec_cybersecurity_final_rule_2023",
+            "section": "page",
+            "page": 123,
+            "score": 0.0318,
+            "snippet": "123 \nup to an additional 30 days if the Attorney General determines disclosure continues to pose a"
+          }
+        ]
+      }
+    ]
+  },
+  "recall_at_1": 0.3824,
+  "recall_at_3": 0.5588,
+  "recall_at_5": 0.5882,
+  "recall_at_10": 0.7647,
+  "mrr": 0.492
 }

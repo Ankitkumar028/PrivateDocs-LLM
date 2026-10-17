@@ -68,9 +68,11 @@ class Settings(BaseSettings):
     # GPU / Cloud
     VLLM_IMAGE: str = "rocm/vllm:rocm6.2_mi300_ubuntu22.04_py3.10_vllm_0.6.3"
     HF_TOKEN: str | None = None
-    HF_HUB_ENABLE_HF_TRANSFER: int = 1
     GPU_HOURLY_RATE: float = 1.99
     GPU_MAX_BUDGET_HOURS: float = 35.0
+
+    # SEC EDGAR Ingestion
+    SEC_USER_AGENT: str = "PrivateDocs-LLM-Evaluation/1.0 (admin@example.com; Research-RAG-Evaluation)"
 
 
 @lru_cache(maxsize=1)
