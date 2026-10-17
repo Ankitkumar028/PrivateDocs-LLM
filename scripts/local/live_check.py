@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
-from pathlib import Path
 import sys
+from pathlib import Path
+
 import httpx
 
 # Force UTF-8 stdout if supported
