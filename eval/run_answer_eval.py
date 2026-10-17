@@ -13,9 +13,9 @@ import argparse
 import json
 import logging
 import os
-from pathlib import Path
 import sys
 import time
+from pathlib import Path
 from typing import Any
 
 import httpx
@@ -24,8 +24,8 @@ repo_root = Path(__file__).resolve().parent.parent
 if str(repo_root) not in sys.path:
     sys.path.insert(0, str(repo_root))
 
-from eval.judge import judge_saved_answers
-from privatedocs.config import get_settings
+from eval.judge import judge_saved_answers  # noqa: E402
+from privatedocs.config import get_settings  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("eval_answers")

@@ -28,9 +28,9 @@ import argparse
 import json
 import logging
 import os
-from pathlib import Path
 import random
 import re
+from pathlib import Path
 from typing import Any
 
 import httpx
@@ -119,7 +119,7 @@ def deterministic_score_answer(
                 critique = f"Weak alignment with reference ({overlap:.1%} overlap)."
 
             faithfulness = 1
-            citation_score = 1.0 if has_valid_citation else 0.0
+            citation_score = 1.0 if citation_correct else 0.0
 
     return {
         "judge_method": "deterministic_rubric",

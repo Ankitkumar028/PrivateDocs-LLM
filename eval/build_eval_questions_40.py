@@ -1,9 +1,9 @@
 """Script to generate eval/datasets/eval_questions_40.jsonl with exact evidence phrases."""
 
 import json
-from pathlib import Path
 import pickle
 import re
+from pathlib import Path
 
 with open("data/bm25_index.pkl", "rb") as f:
     chunks = pickle.load(f)["chunks"]
@@ -17,11 +17,7 @@ def find_first(doc_id, pattern):
     for c in chunks_by_doc.get(doc_id, []):
         m = regex.search(c.content)
         if m:
-            start = max(0, m.start() - 20)
-            end = min(len(c.content), m.end() + 60)
-            # Find a clean snippet
             snippet = c.content[m.start():m.end() + 40].strip()
-            # clean up multiple whitespace
             clean_snippet = " ".join(snippet.split()[:12])
             return c, clean_snippet
     return None, None
@@ -33,7 +29,7 @@ specs = [
      r"carriers providing cellular network service for the Company",
      "cellular network service for the Company",
      "Apple notes that carriers provide financing, installment payment plans, or subsidies for purchases of Apple products, and changes to these programs could affect product sales."),
-    
+
     ("q_aapl_2", "sec_apple_10k_2023", "numeric",
      "What was Apple's total undiscounted liabilities and imputed interest reported in Note 7?",
      r"Total undiscounted liabilities",
@@ -278,11 +274,11 @@ for q_id, doc_id, q_type, question, pat, default_ev, ref in specs:
     if chunk is None:
         print(f"ERROR: Could not find chunk for {q_id} in {doc_id} with pattern {pat}")
         continue
-    
+
     # Pick a solid verbatim phrase of 4 to 8 words that appears directly in chunk.content
     match = re.search(pat, chunk.content, re.IGNORECASE)
     assert match, f"Pattern {pat} must match {chunk.content[:100]}"
-    
+
     # Extract clean phrase from match
     m_start = match.start()
     m_end = match.end()
@@ -290,11 +286,11 @@ for q_id, doc_id, q_type, question, pat, default_ev, ref in specs:
     surrounding = chunk.content[m_start:m_end + 30].strip()
     words = surrounding.split()
     evidence_phrase = " ".join(words[:6])
-    if not (evidence_phrase.lower() in chunk.content.lower()):
+    if evidence_phrase.lower() not in chunk.content.lower():
         evidence_phrase = chunk.content[m_start:m_end].strip()
-    
+
     assert evidence_phrase.lower() in chunk.content.lower(), f"Evidence phrase '{evidence_phrase}' not in chunk!"
-    
+
     record = {
         "id": q_id,
         "question": question,
