@@ -96,6 +96,17 @@ def test_ask_authorized(test_client):
     assert "tokens" in data
     assert len(data["answer"]) > 0
 
+    # Token accounting verification
+    assert "prompt_tokens" in data
+    assert "completion_tokens" in data
+    assert "total_tokens" in data
+    assert data["prompt_tokens"] > 0, "Prompt tokens must be reported and > 0"
+    assert data["completion_tokens"] > 0, "Completion tokens must be reported and > 0"
+    assert data["total_tokens"] == data["prompt_tokens"] + data["completion_tokens"], (
+        "total_tokens must equal prompt_tokens + completion_tokens"
+    )
+    assert data["tokens"] == data["total_tokens"]
+
 
 def test_ingest_requires_admin(test_client):
     file_content = b"Confidential memo regarding hardware infrastructure."

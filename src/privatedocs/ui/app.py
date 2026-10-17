@@ -120,7 +120,9 @@ for msg in st.session_state["messages"]:
             m = msg["metrics"]
             st.markdown(
                 f'<span class="metric-badge">⏱️ {m.get("latency_ms", 0):.0f} ms</span>'
-                f'<span class="metric-badge">🔤 {m.get("tokens", 0)} tokens</span>',
+                f'<span class="metric-badge">📥 Prompt: {m.get("prompt_tokens", 0)}</span>'
+                f'<span class="metric-badge">📤 Generated: {m.get("completion_tokens", 0)}</span>'
+                f'<span class="metric-badge">🔤 Total: {m.get("total_tokens", m.get("tokens", 0))}</span>',
                 unsafe_allow_html=True,
             )
         if msg.get("sources"):
@@ -169,13 +171,17 @@ if prompt := st.chat_input("Ask a question about the documents..."):
                     sources = data.get("sources", [])
                     metrics = {
                         "latency_ms": data.get("latency_ms", elapsed_ms),
-                        "tokens": data.get("tokens", 0),
+                        "prompt_tokens": data.get("prompt_tokens", 0),
+                        "completion_tokens": data.get("completion_tokens", 0),
+                        "total_tokens": data.get("total_tokens", data.get("tokens", 0)),
                     }
 
                     st.markdown(answer_text)
                     st.markdown(
                         f'<span class="metric-badge">⏱️ {metrics["latency_ms"]:.0f} ms</span>'
-                        f'<span class="metric-badge">🔤 {metrics["tokens"]} tokens</span>',
+                        f'<span class="metric-badge">📥 Prompt: {metrics["prompt_tokens"]} tokens</span>'
+                        f'<span class="metric-badge">📤 Generated: {metrics["completion_tokens"]} tokens</span>'
+                        f'<span class="metric-badge">🔤 Total: {metrics["total_tokens"]}</span>',
                         unsafe_allow_html=True,
                     )
 

@@ -327,6 +327,9 @@ async def ask(payload: AskRequest) -> Any:
             sources=sources,
             latency_ms=round(total_latency_sec * 1000.0, 2),
             tokens=usage.total_tokens,
+            prompt_tokens=usage.prompt_tokens,
+            completion_tokens=usage.completion_tokens,
+            total_tokens=usage.total_tokens,
         )
 
     except Exception as exc:

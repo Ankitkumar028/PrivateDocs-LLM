@@ -38,7 +38,10 @@ class AskResponse(BaseModel):
     answer: str
     sources: list[SourceCitation]
     latency_ms: float
-    tokens: int
+    tokens: int  # Backwards compatibility alias for total_tokens
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    total_tokens: int = 0
     ttft_ms: float | None = None
 
 
