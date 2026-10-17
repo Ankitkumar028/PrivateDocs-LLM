@@ -1,0 +1,48 @@
+experiments:
+  - id: E0
+    model_name: meta-llama/Llama-3.1-8B-Instruct
+    model_class: small
+    precision: bfloat16
+    concurrency_levels: [1, 8, 32, 64]
+    estimated_hours: 1.5
+    purpose: "Smoke test, validate pipeline end to end"
+
+  - id: E1
+    model_name: meta-llama/Llama-3.1-8B-Instruct
+    model_class: small
+    precision: fp8
+    concurrency_levels: [1, 8, 32, 64]
+    estimated_hours: 1.5
+    purpose: "Precision effect on small model"
+
+  - id: E2
+    model_name: Qwen/Qwen2.5-32B-Instruct
+    model_class: medium
+    precision: bfloat16
+    concurrency_levels: [1, 8, 32, 64]
+    estimated_hours: 3.0
+    purpose: "Mid-size baseline"
+
+  - id: E3
+    model_name: Qwen/Qwen2.5-32B-Instruct
+    model_class: medium
+    precision: fp8
+    concurrency_levels: [1, 8, 32, 64]
+    estimated_hours: 2.5
+    purpose: "Precision effect, mid-size"
+
+  - id: E4
+    model_name: meta-llama/Llama-3.1-70B-Instruct
+    model_class: large
+    precision: bfloat16
+    concurrency_levels: [1, 8, 32, 64]
+    estimated_hours: 4.0
+    purpose: "The MI300X showcase: single-GPU 70B"
+
+  - id: E5
+    model_name: meta-llama/Llama-3.1-70B-Instruct
+    model_class: large
+    precision: fp8
+    concurrency_levels: [1, 8, 32, 64]
+    estimated_hours: 3.5
+    purpose: "Headroom for more concurrency and KV cache"

@@ -1,0 +1,18 @@
+documents:
+  - id: sec_apple_10k_2023
+    title: "Apple Inc. Form 10-K (Fiscal Year 2023)"
+    url: "https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm"
+    format: html
+    category: financial
+
+  - id: sec_microsoft_10k_2023
+    title: "Microsoft Corporation Form 10-K (Fiscal Year 2023)"
+    url: "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000078901923000032/msft-20230630.htm"
+    format: html
+    category: financial
+
+  - id: nist_ai_rmf_1_0
+    title: "NIST AI Risk Management Framework 1.0"
+    url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf"
+    format: pdf
+    category: policy

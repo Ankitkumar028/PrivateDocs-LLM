@@ -1,0 +1,94 @@
+services:
+  vllm:
+    image: ${VLLM_IMAGE:-rocm/vllm:rocm6.2_mi300_ubuntu22.04_py3.10_vllm_0.6.3}
+    container_name: privatedocs-vllm-rocm
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+    group_add:
+      - video
+    shm_size: 32g
+    network_mode: host
+    environment:
+      - HF_TOKEN=${HF_TOKEN:-}
+      - HF_HUB_ENABLE_HF_TRANSFER=1
+    volumes:
+      - /mnt/scratch/hf_cache:/root/.cache/huggingface
+    command: >
+      python3 -m vllm.entrypoints.openai.api_server
+      --model ${LLM_MODEL:-meta-llama/Llama-3.1-8B-Instruct}
+      --dtype ${DTYPE:-bfloat16}
+      --port 8000
+      --trust-remote-code
+      --max-model-len 4096
+      --gpu-memory-utilization 0.90
+    restart: unless-stopped
+
+  qdrant:
+    image: qdrant/qdrant:v1.8.4
+    container_name: privatedocs-qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - /mnt/scratch/qdrant_data:/qdrant/storage
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ..
+      dockerfile: docker/api.Dockerfile
+    container_name: privatedocs-api
+    ports:
+      - "8080:8000"
+    environment:
+      - ENVIRONMENT=droplet
+      - LLM_BASE_URL=http://localhost:8000/v1
+      - LLM_MODEL=${LLM_MODEL:-meta-llama/Llama-3.1-8B-Instruct}
+      - QDRANT_HOST=localhost
+      - QDRANT_PORT=6333
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    network_mode: host
+    depends_on:
+      - qdrant
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: ..
+      dockerfile: docker/ui.Dockerfile
+    container_name: privatedocs-ui
+    ports:
+      - "8501:8501"
+    environment:
+      - API_BASE_URL=http://localhost:8080
+    network_mode: host
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v2.50.0
+    container_name: privatedocs-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    network_mode: host
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:10.3.3
+    container_name: privatedocs-grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/etc/grafana/dashboards:ro
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    network_mode: host
+    depends_on:
+      - prometheus
+    restart: unless-stopped

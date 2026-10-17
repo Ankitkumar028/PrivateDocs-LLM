@@ -1,0 +1,121 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "title": "Ask Requests / Sec",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 0 },
+      "targets": [
+        {
+          "expr": "sum(rate(ask_requests_total[1m])) by (status)",
+          "legendFormat": "Status: {{status}}"
+        }
+      ]
+    },
+    {
+      "title": "End-to-End Latency (p50, p95, p99)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 0 },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(ask_latency_seconds_bucket[1m])) by (le))",
+          "legendFormat": "p50"
+        },
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(ask_latency_seconds_bucket[1m])) by (le))",
+          "legendFormat": "p95"
+        },
+        {
+          "expr": "histogram_quantile(0.99, sum(rate(ask_latency_seconds_bucket[1m])) by (le))",
+          "legendFormat": "p99"
+        }
+      ]
+    },
+    {
+      "title": "Time to First Token (TTFT) p95",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 0 },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(llm_ttft_seconds_bucket[1m])) by (le))",
+          "legendFormat": "TTFT p95 (s)"
+        }
+      ]
+    },
+    {
+      "title": "Throughput (Tokens / Sec)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 8 },
+      "targets": [
+        {
+          "expr": "rate(llm_tokens_generated_total[1m])",
+          "legendFormat": "Generated Tok/s"
+        },
+        {
+          "expr": "rate(llm_tokens_prompt_total[1m])",
+          "legendFormat": "Prompt Tok/s"
+        }
+      ]
+    },
+    {
+      "title": "Retrieval Latency p95",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 8 },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(retrieval_latency_seconds_bucket[1m])) by (le))",
+          "legendFormat": "Retrieval p95 (s)"
+        }
+      ]
+    },
+    {
+      "title": "Rate Limit Exceeded Total",
+      "type": "stat",
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 8 },
+      "targets": [
+        {
+          "expr": "sum(rate_limited_total)",
+          "legendFormat": "Rate Limits"
+        }
+      ]
+    },
+    {
+      "title": "vLLM KV Cache Usage %",
+      "type": "gauge",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "targets": [
+        {
+          "expr": "vllm:gpu_cache_usage_factor * 100",
+          "legendFormat": "GPU KV Cache %"
+        }
+      ]
+    },
+    {
+      "title": "vLLM Active & Waiting Requests",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "targets": [
+        {
+          "expr": "vllm:num_requests_running",
+          "legendFormat": "Running"
+        },
+        {
+          "expr": "vllm:num_requests_waiting",
+          "legendFormat": "Waiting"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["privatedocs", "llm", "rag", "vllm"],
+  "time": { "from": "now-15m", "to": "now" },
+  "title": "PrivateDocs LLM Platform Dashboard",
+  "uid": "privatedocs-platform"
+}

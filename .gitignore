@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variables & secrets
+.env
+.env*.local
+*.key
+*.pem
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing, type checking and linting
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local databases & storage
+*.sqlite3
+*.db
+qdrant_storage/
+data/
+
+# Raw dataset downloads (manifest committed, raw files ignored per spec)
+eval/datasets/raw/
+eval/datasets/downloads/
+*.pdf
+*.tar.gz
+*.zip
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# vLLM / HuggingFace local caches
+.cache/
+hf_cache/
