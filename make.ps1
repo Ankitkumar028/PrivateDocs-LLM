@@ -31,7 +31,7 @@ function Show-Help {
 switch ($Target.ToLower()) {
     "smoke-local" {
         Write-Host "Running local smoke test..." -ForegroundColor Green
-        uv run python "$ScriptDir\scripts\local\smoke_test.sh" @RemainingArgs
+        uv run python "$ScriptDir\scripts\local\smoke_test.py" @RemainingArgs
     }
     "test" {
         Write-Host "Running unit tests..." -ForegroundColor Green

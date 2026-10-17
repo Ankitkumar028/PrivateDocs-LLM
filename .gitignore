@@ -31,13 +31,17 @@ htmlcov/
 # Local databases & storage
 *.sqlite3
 *.db
+*.pkl
 qdrant_storage/
-data/
+data/*
+!data/sample_documents/
+!data/sample_documents/**
 
 # Raw dataset downloads (manifest committed, raw files ignored per spec)
 eval/datasets/raw/
 eval/datasets/downloads/
 *.pdf
+!data/sample_documents/*.pdf
 *.tar.gz
 *.zip
 

@@ -42,9 +42,9 @@ ingest:
 
 smoke-local:
 	@if [ -d "$(VENV)" ]; then \
-		./$(VENV)/bin/python scripts/local/smoke_test.sh; \
+		./$(VENV)/bin/python scripts/local/smoke_test.py; \
 	else \
-		bash scripts/local/smoke_test.sh; \
+		$(PYTHON) scripts/local/smoke_test.py; \
 	fi
 
 test:

@@ -138,14 +138,25 @@ class VectorStore:
             )
 
         try:
+            hits = []
             if hasattr(self.client, "query_points"):
-                response = self.client.query_points(
-                    collection_name=self.collection_name,
-                    query=query_vector,
-                    limit=top_k,
-                    query_filter=query_filter,
-                )
-                hits = response.points
+                try:
+                    response = self.client.query_points(
+                        collection_name=self.collection_name,
+                        query=query_vector,
+                        limit=top_k,
+                        query_filter=query_filter,
+                    )
+                    hits = response.points
+                except Exception as query_exc:
+                    logger.debug("query_points failed (%s); trying fallback to search()...", query_exc)
+                    if hasattr(self.client, "search"):
+                        hits = self.client.search(
+                            collection_name=self.collection_name,
+                            query_vector=query_vector,
+                            limit=top_k,
+                            query_filter=query_filter,
+                        )
             elif hasattr(self.client, "search"):
                 hits = self.client.search(
                     collection_name=self.collection_name,
@@ -153,8 +164,6 @@ class VectorStore:
                     limit=top_k,
                     query_filter=query_filter,
                 )
-            else:
-                hits = []
         except Exception as exc:
             logger.error("Qdrant search error: %s", exc)
             return []
