@@ -4,7 +4,7 @@ set -euo pipefail
 MODEL="${1:-meta-llama/Llama-3.1-8B-Instruct}"
 DTYPE="${2:-bfloat16}"
 # VERIFY: Ensure container image tag matches host ROCm driver version
-VLLM_IMAGE="${VLLM_IMAGE:-rocm/vllm:rocm6.2_mi300_ubuntu22.04_py3.10_vllm_0.6.3}"
+VLLM_IMAGE="${VLLM_IMAGE:-vllm/vllm-openai-rocm:v0.27.1}"
 SCRATCH_DIR="/mnt/scratch/hf_cache"
 
 # Configurable options
@@ -41,24 +41,27 @@ docker stop vllm-rocm 2>/dev/null || true
 docker rm vllm-rocm 2>/dev/null || true
 
 # Run vLLM with ROCm device bindings and shared memory size
+mkdir -p "$SCRATCH_DIR"
 docker run -d \
     --name vllm-rocm \
-    --network host \
+    -p 127.0.0.1:8000:8000 \
     --device=/dev/kfd \
     --device=/dev/dri \
     --group-add video \
+    --ipc=host \
     --shm-size=32g \
+    --cap-add=SYS_PTRACE \
+    --security-opt seccomp=unconfined \
     -v "$SCRATCH_DIR":/root/.cache/huggingface \
     -e HF_TOKEN="${HF_TOKEN:-}" \
-    -e HF_HUB_ENABLE_HF_TRANSFER=1 \
     "$VLLM_IMAGE" \
-    python3 -m vllm.entrypoints.openai.api_server \
-        --model "$MODEL" \
-        --dtype "$DTYPE" `# VERIFY: bfloat16 native acceleration on AMD CDNA3 architecture` \
-        --port 8000 \
-        --max-model-len "$MAX_MODEL_LEN" \
-        --gpu-memory-utilization 0.90 `# VERIFY: reserve 10% VRAM headroom for PyTorch runtime and ROCm allocations` \
-        "${EXTRA_ARGS[@]}"
+    "$MODEL" \
+    --generation-config vllm \
+    --dtype "$DTYPE" \
+    --port 8000 \
+    --max-model-len "$MAX_MODEL_LEN" \
+    --gpu-memory-utilization 0.90 \
+    "${EXTRA_ARGS[@]}"
 
 echo "Waiting for vLLM to initialize on port 8000..."
 READY=0
