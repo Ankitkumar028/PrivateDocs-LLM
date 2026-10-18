@@ -70,12 +70,15 @@ with st.sidebar:
         value=os.getenv("API_BASE_URL", "http://localhost:8000"),
         help="FastAPI Gateway endpoint URL",
     )
+    from privatedocs.config import get_settings
+    _default_key = os.getenv("USER_API_KEY", get_settings().USER_API_KEY)
     api_key = st.text_input(
         "API Key",
-        value=os.getenv("USER_API_KEY", "user-secret-dev-key-change-in-prod"),
+        value=_default_key,
         type="password",
         help="X-API-Key header credential",
     )
+    st.caption("Valid default: `user-dev-secret-key-67890`")
 
     st.subheader("Retrieval Controls")
     retrieval_mode = st.selectbox(

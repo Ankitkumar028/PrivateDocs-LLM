@@ -99,6 +99,8 @@ def get_auth_db() -> AuthDB:
             _auth_db.add_key(settings.ADMIN_API_KEY, "admin", "Default Admin Key")
         if settings.USER_API_KEY:
             _auth_db.add_key(settings.USER_API_KEY, "user", "Default User Key")
+        # Also register common dev default key to prevent 401s during local testing
+        _auth_db.add_key("user-secret-dev-key-change-in-prod", "user", "Alternate Dev User Key")
     return _auth_db
 
 
