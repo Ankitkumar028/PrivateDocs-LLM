@@ -193,7 +193,12 @@ def run_full_evaluation(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run end-to-end answer evaluation and judging.")
+    parser = argparse.ArgumentParser(
+        description="Run end-to-end answer evaluation and judging.\n\n"
+        "Two-Pass Evaluation Flow:\n"
+        "  Pass 1 (During Experiments): Generate and save raw answers via 03_run_experiment.sh.\n"
+        "  Pass 2 (Post-Experiment Judging): Judge all raw answers with the largest loaded model.\n"
+    )
     parser.add_argument("--questions", default="eval/datasets/eval_questions_40.jsonl", help="Questions JSONL")
     parser.add_argument("--url", default=os.getenv("API_URL", "http://localhost:8000"), help="API Gateway URL")
     parser.add_argument("--key", default=os.getenv("API_KEY", get_settings().USER_API_KEY), help="API Key")
@@ -203,10 +208,23 @@ def main() -> None:
     parser.add_argument("--metrics-out", default="results/answer_eval_metrics.json", help="Metrics summary JSON")
     parser.add_argument("--skip-generation", action="store_true", help="Re-judge existing raw answers")
     parser.add_argument("--top-k", type=int, default=3, help="Top-K context chunks")
-    parser.add_argument("--judge-model", default=os.getenv("JUDGE_MODEL", "meta-llama/Llama-3.1-8B-Instruct"), help="meta-llama/Llama-3.1-8B-Instruct | deterministic")
+    parser.add_argument("--judge-model", default=os.getenv("JUDGE_MODEL"), help="Required: Judge LLM model name served on vLLM")
+    parser.add_argument("--smoke-test-only", action="store_true", help="Explicitly enable deterministic rubric fallback (smoke-test only, NOT for official eval)")
     parser.add_argument("--judge-url", default=os.getenv("JUDGE_BASE_URL", "http://localhost:8000/v1"), help="OpenAI-compatible URL (droplet vLLM)")
     parser.add_argument("--judge-key", default=os.getenv("JUDGE_API_KEY", "EMPTY"), help="Judge API Key")
     args = parser.parse_args()
+
+    judge_model = args.judge_model
+    if not judge_model:
+        if args.smoke_test_only:
+            judge_model = "deterministic"
+            logger.warning("No JUDGE_MODEL specified. Running with deterministic fallback rubric [SMOKE-TEST ONLY].")
+        else:
+            raise ValueError(
+                "JUDGE_MODEL is required. Set environment variable JUDGE_MODEL "
+                "(e.g. export JUDGE_MODEL='meta-llama/Llama-3.1-70B-Instruct') or specify --judge-model. "
+                "To run offline smoke-testing without an LLM, pass --smoke-test-only."
+            )
 
     run_full_evaluation(
         questions_path=Path(args.questions),
@@ -218,7 +236,7 @@ def main() -> None:
         output_metrics_path=Path(args.metrics_out),
         top_k=args.top_k,
         skip_generation=args.skip_generation,
-        judge_model=args.judge_model,
+        judge_model=judge_model,
         judge_base_url=args.judge_url,
         judge_api_key=args.judge_key,
     )

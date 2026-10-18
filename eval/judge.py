@@ -351,21 +351,39 @@ def judge_saved_answers(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run LLM or deterministic judge on saved answers.")
+    parser = argparse.ArgumentParser(
+        description="Run LLM or deterministic judge on saved answers.\n\n"
+        "Two-Pass Evaluation Flow:\n"
+        "  Pass 1 (During Experiments): Save raw answers per experiment without running judge.\n"
+        "  Pass 2 (Post-Experiment Judging): Run this script using the largest loaded model.\n"
+    )
     parser.add_argument("--input", default="results/raw_answers.jsonl", help="Input raw answers JSONL")
     parser.add_argument("--out", default="results/judged_answers.jsonl", help="Output judged JSONL")
     parser.add_argument("--sample-out", default="results/manual_review_sample_20pct.jsonl", help="20 percent manual review sample")
-    parser.add_argument("--judge-model", default=os.getenv("JUDGE_MODEL", "meta-llama/Llama-3.1-8B-Instruct"), help="meta-llama/Llama-3.1-8B-Instruct | deterministic")
+    parser.add_argument("--judge-model", default=os.getenv("JUDGE_MODEL"), help="Required: LLM model name served on vLLM (e.g. meta-llama/Llama-3.1-70B-Instruct)")
+    parser.add_argument("--smoke-test-only", action="store_true", help="Explicitly enable deterministic rubric fallback (smoke-test only, NOT for official eval)")
     parser.add_argument("--judge-url", default=os.getenv("JUDGE_BASE_URL", "http://localhost:8000/v1"), help="OpenAI-compatible URL (droplet vLLM)")
     parser.add_argument("--judge-key", default=os.getenv("JUDGE_API_KEY", "EMPTY"), help="API Key for judge LLM")
     parser.add_argument("--top-k", type=int, default=3, help="Top-K context chunks used")
     args = parser.parse_args()
 
+    judge_model = args.judge_model
+    if not judge_model:
+        if args.smoke_test_only:
+            judge_model = "deterministic"
+            logger.warning("No JUDGE_MODEL specified. Running with deterministic fallback rubric [SMOKE-TEST ONLY].")
+        else:
+            raise ValueError(
+                "JUDGE_MODEL is required. Set environment variable JUDGE_MODEL "
+                "(e.g. export JUDGE_MODEL='meta-llama/Llama-3.1-70B-Instruct') or specify --judge-model. "
+                "To run offline smoke-testing without an LLM, pass --smoke-test-only."
+            )
+
     results = judge_saved_answers(
         raw_answers_path=Path(args.input),
         judged_output_path=Path(args.out),
         sample_review_path=Path(args.sample_out),
-        judge_model=args.judge_model,
+        judge_model=judge_model,
         judge_base_url=args.judge_url,
         judge_api_key=args.judge_key,
         top_k=args.top_k,

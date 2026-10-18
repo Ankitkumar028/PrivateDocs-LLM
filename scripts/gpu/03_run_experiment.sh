@@ -11,9 +11,30 @@ mkdir -p "$RESULTS_DIR"
 
 python scripts/gpu_budget.py start "Experiment $EXP_ID"
 
-# 1. Run answer evaluation against the running model
-echo "--- Step 1: Running Answer Quality Evaluation ---"
-python eval/run_answer_eval.py --out "$RESULTS_DIR/answer_eval.json"
+# 1. Run answer evaluation and save raw answers on every run (Pass 1 of two-pass flow)
+echo "--- Step 1: Generating and Saving Raw Answers (Pass 1) ---"
+if [ -n "${JUDGE_MODEL:-}" ]; then
+    python eval/run_answer_eval.py \
+        --raw-out "$RESULTS_DIR/raw_answers.jsonl" \
+        --judged-out "$RESULTS_DIR/judged_answers.jsonl" \
+        --sample-out "$RESULTS_DIR/manual_review_sample_20pct.jsonl" \
+        --metrics-out "$RESULTS_DIR/answer_eval_metrics.json" \
+        --judge-model "$JUDGE_MODEL"
+else
+    echo "Notice: JUDGE_MODEL not set; saving raw answers and using smoke-test rubric. Official judging runs in Pass 2."
+    python eval/run_answer_eval.py \
+        --raw-out "$RESULTS_DIR/raw_answers.jsonl" \
+        --judged-out "$RESULTS_DIR/judged_answers.jsonl" \
+        --sample-out "$RESULTS_DIR/manual_review_sample_20pct.jsonl" \
+        --metrics-out "$RESULTS_DIR/answer_eval_metrics.json" \
+        --smoke-test-only
+fi
+
+if [ ! -s "$RESULTS_DIR/raw_answers.jsonl" ]; then
+    echo "ERROR: $RESULTS_DIR/raw_answers.jsonl was not generated or is empty!"
+    exit 1
+fi
+echo "Raw answers successfully saved to $RESULTS_DIR/raw_answers.jsonl"
 
 # 2. Run load tests across concurrency levels (1, 8, 32, 64)
 echo "--- Step 2: Running Concurrency Load Tests ---"

@@ -29,35 +29,47 @@ def generate_report(results_dir: Path, output_file: Path) -> None:
     new_chunk = retrieval_data.get("new_chunk_level_unfiltered", {})
     new_filtered = retrieval_data.get("new_chunk_level_filtered", {})
 
-    report_lines = [
-        "# Evaluation & Benchmark Summary Report",
-        "",
-        "## 1. Retrieval Metrics (Old Doc-Level vs New Chunk-Level Side-by-Side)",
-        "",
-        "| Metric | Old Document-Level | New Chunk-Level (Unfiltered) | New Chunk-Level (Filtered by doc_id) |",
-        "|---|---|---|---|",
-        f"| **Recall@1** | {old_doc.get('recall_at_1', 0):.2%} | {new_chunk.get('recall_at_1', 0):.2%} | {new_filtered.get('recall_at_1', 0):.2%} |",
-        f"| **Recall@3** | {old_doc.get('recall_at_3', 0):.2%} | {new_chunk.get('recall_at_3', 0):.2%} | {new_filtered.get('recall_at_3', 0):.2%} |",
-        f"| **Recall@5** | {old_doc.get('recall_at_5', 0):.2%} | {new_chunk.get('recall_at_5', 0):.2%} | {new_filtered.get('recall_at_5', 0):.2%} |",
-        f"| **Recall@10** | {old_doc.get('recall_at_10', 0):.2%} | {new_chunk.get('recall_at_10', 0):.2%} | {new_filtered.get('recall_at_10', 0):.2%} |",
-        f"| **MRR** | {old_doc.get('mrr', 0):.4f} | {new_chunk.get('mrr', 0):.4f} | {new_filtered.get('mrr', 0):.4f} |",
-        "",
-        "## 2. Answer Quality & Faithfulness (Decoupled Judging)",
-        "",
-        "| Metric | Value |",
-        "|---|---|",
-        f"| Total Evaluated | {answer_data.get('total_evaluated', 'N/A')} |",
-        f"| Judge Model / Method | {answer_data.get('judge_method', 'deterministic')} |",
-        f"| Mean Correctness (0-2) | {answer_data.get('mean_correctness_0_to_2', 'N/A')} / 2.0 |",
-        f"| Faithfulness Rate | {answer_data.get('faithfulness_rate', 0):.1%} |",
-        f"| Abstention Accuracy | {answer_data.get('abstention_accuracy', 0):.1%} |",
-        f"| Citation Precision | {answer_data.get('citation_precision', 0):.1%} |",
-        "",
-        "Raw outputs saved to `results/raw_answers.jsonl`.",
-        "Scored answers saved to `results/judged_answers.jsonl`.",
-        "20% audit sample saved to `results/manual_review_sample_20pct.jsonl`.",
-        "",
-    ]
+    judge_method = str(answer_data.get("judge_method", "")).lower()
+    is_smoke_test = "smoke-test" in judge_method or "deterministic" in judge_method or not judge_method
+
+    if is_smoke_test:
+        report_lines.extend([
+            "## 2. Answer Quality & Faithfulness (Decoupled Judging)",
+            "",
+            "> [!NOTE]",
+            "> **[SMOKE-TEST ONLY]** The answers in this run were scored using the local deterministic fallback rubric.",
+            "> Official LLM evaluation scores will be generated on the GPU droplet using the primary judge model (`JUDGE_MODEL`).",
+            "> Deterministic rubric scores are strictly excluded from published metrics.",
+            "",
+            f"- **Judge Status:** `deterministic_rubric (smoke-test only)`",
+            f"- **Total Evaluated:** {answer_data.get('total_evaluated', 'N/A')}",
+            f"- **Top-K Context Chunks:** {answer_data.get('top_k_used', 'N/A')}",
+            "",
+            "Artifact locations:",
+            "- Raw answers: `results/raw_answers.jsonl`",
+            "- Judged outputs (smoke-test): `results/judged_answers.jsonl`",
+            "- 20% audit sample: `results/manual_review_sample_20pct.jsonl`",
+            "",
+        ])
+    else:
+        report_lines.extend([
+            "## 2. Answer Quality & Faithfulness (Decoupled Judging)",
+            "",
+            "| Metric | Value |",
+            "|---|---|",
+            f"| Total Evaluated | {answer_data.get('total_evaluated', 'N/A')} |",
+            f"| Judge Model / Method | {answer_data.get('judge_method', 'N/A')} |",
+            f"| Mean Correctness (0-2) | {answer_data.get('mean_correctness_0_to_2', 'N/A')} / 2.0 |",
+            f"| Faithfulness Rate | {answer_data.get('faithfulness_rate', 0):.1%} |",
+            f"| Abstention Accuracy | {answer_data.get('abstention_accuracy', 0):.1%} |",
+            f"| Over-Abstention Rate | {answer_data.get('over_abstention_rate', 0):.1%} |",
+            f"| Citation Precision | {answer_data.get('citation_precision', 0):.1%} |",
+            "",
+            "Raw outputs saved to `results/raw_answers.jsonl`.",
+            "Scored answers saved to `results/judged_answers.jsonl`.",
+            "20% audit sample saved to `results/manual_review_sample_20pct.jsonl`.",
+            "",
+        ])
 
     if cost_data:
         g = cost_data.get("gpu_specs", {})
