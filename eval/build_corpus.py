@@ -32,7 +32,24 @@ try:
     from privatedocs.config import get_settings
     SEC_USER_AGENT = get_settings().SEC_USER_AGENT
 except Exception:
-    SEC_USER_AGENT = "PrivateDocs-LLM-Evaluation/1.0 (admin@example.com; Research-RAG-Evaluation)"
+    SEC_USER_AGENT = "REPLACE_WITH_YOUR_NAME_AND_EMAIL (your-email@example.com; Organization)"
+
+
+def validate_sec_user_agent(agent_string: str) -> None:
+    """Validate that SEC_USER_AGENT has been customized and does not contain placeholders."""
+    if (
+        not agent_string
+        or "REPLACE_WITH" in agent_string
+        or "your-email@example.com" in agent_string
+        or "admin@example.com" in agent_string
+    ):
+        raise ValueError(
+            f"\n[FATAL ERROR] Invalid SEC_USER_AGENT: '{agent_string}'\n"
+            "SEC EDGAR Fair Access Policy requires an authentic, identifiable User-Agent in the format:\n"
+            "  '<User/Org Name>/<Version> (<ValidContactEmail@domain.com>; <Affiliation>)'\n"
+            "You must replace the placeholder SEC_USER_AGENT in your .env file before ingesting SEC documents."
+        )
+
 
 REQUEST_DELAY_SECONDS = 0.3  # Max ~3.3 req/s, well below the 10 req/s SEC limit
 
@@ -102,6 +119,7 @@ def build_corpus(
         docs = docs[:max_docs]
 
     output_dir.mkdir(parents=True, exist_ok=True)
+    validate_sec_user_agent(SEC_USER_AGENT)
     logger.info("Starting corpus download for %d documents -> %s", len(docs), output_dir)
 
     headers = {

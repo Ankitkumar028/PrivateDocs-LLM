@@ -7,8 +7,34 @@ DTYPE="${2:-bfloat16}"
 VLLM_IMAGE="${VLLM_IMAGE:-rocm/vllm:rocm6.2_mi300_ubuntu22.04_py3.10_vllm_0.6.3}"
 SCRATCH_DIR="/mnt/scratch/hf_cache"
 
+# Configurable options
+MAX_MODEL_LEN="${MAX_MODEL_LEN:-8192}"
+TRUST_REMOTE_CODE="${TRUST_REMOTE_CODE:-false}"
+QUANTIZATION="${QUANTIZATION:-}"
+
+EXTRA_ARGS=()
+
+# Opt-in remote code execution per model
+if [ "$TRUST_REMOTE_CODE" = "true" ]; then
+    EXTRA_ARGS+=(--trust-remote-code)
+fi
+
+# FP8 path: check if DTYPE is fp8 or QUANTIZATION is explicitly requested
+if [ "$DTYPE" = "fp8" ] || [ -n "$QUANTIZATION" ]; then
+    QUANT_VAL="${QUANTIZATION:-fp8}"
+    # VERIFY against vLLM's ROCm docs: check whether host ROCm vLLM image supports --quantization fp8 with CDNA3 native FP8 matrix cores
+    EXTRA_ARGS+=(--quantization "$QUANT_VAL")
+    # For FP8 checkpoints, dtype is typically float16/bfloat16 for unquantized layers
+    if [ "$DTYPE" = "fp8" ]; then
+        DTYPE="bfloat16"
+    fi
+fi
+
 echo "Launching vLLM on MI300X..."
-echo "Model: $MODEL | Precision: $DTYPE"
+echo "Model: $MODEL | Precision: $DTYPE | MaxLen: $MAX_MODEL_LEN | TrustRemoteCode: $TRUST_REMOTE_CODE"
+if [ -n "$QUANTIZATION" ] || [ "${2:-}" = "fp8" ]; then
+    echo "Quantization: ${QUANT_VAL:-fp8} (# VERIFY against vLLM's ROCm docs)"
+fi
 
 # Stop existing container if running
 docker stop vllm-rocm 2>/dev/null || true
@@ -30,9 +56,9 @@ docker run -d \
         --model "$MODEL" \
         --dtype "$DTYPE" `# VERIFY: bfloat16 native acceleration on AMD CDNA3 architecture` \
         --port 8000 \
-        --trust-remote-code `# VERIFY: required for models with custom tokenizers or modeling code` \
-        --max-model-len 4096 `# VERIFY: verify context length fits within desired batch size and KV cache` \
-        --gpu-memory-utilization 0.90 `# VERIFY: reserve 10% VRAM headroom for PyTorch runtime and ROCm allocations`
+        --max-model-len "$MAX_MODEL_LEN" \
+        --gpu-memory-utilization 0.90 `# VERIFY: reserve 10% VRAM headroom for PyTorch runtime and ROCm allocations` \
+        "${EXTRA_ARGS[@]}"
 
 echo "Waiting for vLLM to initialize on port 8000..."
 READY=0
@@ -62,3 +88,4 @@ curl -s -X POST http://localhost:8000/v1/chat/completions \
     }' | jq .
 
 echo "vLLM test passed."
+

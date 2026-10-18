@@ -161,22 +161,29 @@ def run_full_evaluation(
         judge_base_url=judge_base_url,
         judge_api_key=judge_api_key,
         sample_pct=0.20,
+        top_k=top_k,
     )
 
     output_metrics_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_metrics_path, "w", encoding="utf-8") as f:
         json.dump(metrics, f, indent=2)
 
-    print("\n" + "=" * 55)
+    print("\n" + "=" * 65)
     print("END-TO-END ANSWER EVALUATION RESULTS")
-    print("=" * 55)
+    print("=" * 65)
     print(f"Total Questions Evaluated: {metrics['total_evaluated']}")
     print(f"Judge Method / Model:      {metrics['judge_method']}")
+    print(f"Top-K Used:                {metrics['top_k_used']}")
     print(f"Mean Correctness (0-2):    {metrics['mean_correctness_0_to_2']} / 2.0")
     print(f"Faithfulness Rate:         {metrics['faithfulness_rate']:.1%}")
     print(f"Abstention Accuracy:       {metrics['abstention_accuracy']:.1%}")
+    print(f"Over-Abstention Rate:      {metrics['over_abstention_rate']:.1%}")
     print(f"Citation Precision:        {metrics['citation_precision']:.1%}")
-    print("=" * 55)
+    print("-" * 65)
+    print("Per-Question-Type Breakdown:")
+    for q_type, tb in metrics.get("per_question_type_breakdown", {}).items():
+        print(f"  [{q_type:<14}] n={tb['count']:<2} | Corr: {tb['mean_correctness_0_to_2']:.2f}/2.0 | Faith: {tb['faithfulness_rate']:.1%} | Abstain: {tb['abstention_accuracy']:.1%} | Cit: {tb['citation_precision']:.1%}")
+    print("=" * 65)
     print(f"Saved raw answers:         {raw_answers_path}")
     print(f"Saved judged scores:       {judged_answers_path}")
     print(f"Saved 20% manual sample:   {manual_sample_path}")
@@ -196,9 +203,9 @@ def main() -> None:
     parser.add_argument("--metrics-out", default="results/answer_eval_metrics.json", help="Metrics summary JSON")
     parser.add_argument("--skip-generation", action="store_true", help="Re-judge existing raw answers")
     parser.add_argument("--top-k", type=int, default=3, help="Top-K context chunks")
-    parser.add_argument("--judge-model", default=os.getenv("JUDGE_MODEL", "deterministic"), help="Judge model or method")
-    parser.add_argument("--judge-url", default=os.getenv("JUDGE_BASE_URL", "https://api.openai.com/v1"), help="Judge API base URL")
-    parser.add_argument("--judge-key", default=os.getenv("JUDGE_API_KEY"), help="Judge API Key")
+    parser.add_argument("--judge-model", default=os.getenv("JUDGE_MODEL", "meta-llama/Llama-3.1-8B-Instruct"), help="meta-llama/Llama-3.1-8B-Instruct | deterministic")
+    parser.add_argument("--judge-url", default=os.getenv("JUDGE_BASE_URL", "http://localhost:8000/v1"), help="OpenAI-compatible URL (droplet vLLM)")
+    parser.add_argument("--judge-key", default=os.getenv("JUDGE_API_KEY", "EMPTY"), help="Judge API Key")
     args = parser.parse_args()
 
     run_full_evaluation(
@@ -219,3 +226,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

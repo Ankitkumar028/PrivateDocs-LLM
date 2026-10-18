@@ -73,7 +73,17 @@ switch ($Target.ToLower()) {
     "gpu-up" {
         docker compose -f "$ScriptDir\docker\compose.gpu.yml" up -d @RemainingArgs
     }
+    "gpu-dryrun" {
+        Write-Host "Running GPU dry-run validation (bash syntax & stubbed docker)..." -ForegroundColor Green
+        $bashCmd = "bash"
+        if (Test-Path "C:\Program Files\Git\bin\bash.exe") {
+            $bashCmd = "C:\Program Files\Git\bin\bash.exe"
+        }
+        & $bashCmd -c "bash -n scripts/gpu/*.sh"
+        & $bashCmd "$ScriptDir/scripts/gpu/test_stubbed_docker.sh"
+    }
     default {
         Show-Help
     }
 }
+

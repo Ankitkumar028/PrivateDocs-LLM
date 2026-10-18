@@ -72,7 +72,7 @@ class Settings(BaseSettings):
     GPU_MAX_BUDGET_HOURS: float = 35.0
 
     # SEC EDGAR Ingestion
-    SEC_USER_AGENT: str = "PrivateDocs-LLM-Evaluation/1.0 (admin@example.com; Research-RAG-Evaluation)"
+    SEC_USER_AGENT: str = "REPLACE_WITH_YOUR_NAME_AND_EMAIL (your-email@example.com; Organization)"
 
 
 @lru_cache(maxsize=1)

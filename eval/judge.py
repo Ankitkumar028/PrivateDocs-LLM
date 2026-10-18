@@ -5,13 +5,15 @@ The judge MUST NOT be the 0.5B local model. A 0.5B parameter model lacks the rea
 capability, neutral perspective, and instruction-following required for evaluation.
 
 Supported Evaluation Methods / Models:
-1. Frontier LLM Judge (OpenAI-compatible):
-   - Configurable model (e.g., gpt-4o-mini, gpt-4o, claude-3-5-sonnet via proxy)
-   - Evaluates correctness (0-2), faithfulness (0-1), and abstention (0-1) using strict rubric
+1. OpenAI-Compatible Judge Endpoint (Default):
+   - Configurable LLM judge served via OpenAI-compatible endpoint (e.g. vLLM server on the GPU droplet: meta-llama/Llama-3.1-8B-Instruct).
+   - Evaluates correctness (0-2), faithfulness (0-1), and abstention (0-1) using strict rubric.
    - Configurable via CLI flags: --judge-model, --judge-url, --judge-key or ENV vars:
-     JUDGE_MODEL (default: gpt-4o-mini), JUDGE_BASE_URL, JUDGE_API_KEY
-2. Deterministic Rubric Method (Offline fallback / rule-based baseline):
-   - Zero-dependency, offline deterministic evaluator checking:
+     JUDGE_MODEL (default: meta-llama/Llama-3.1-8B-Instruct), JUDGE_BASE_URL (default: http://localhost:8000/v1), JUDGE_API_KEY (default: EMPTY).
+2. Deterministic Rubric Method (Smoke-Test Only):
+   - Offline rule-based baseline for smoke testing and offline continuous integration only.
+   - NOT for production or final benchmarking.
+   - Checks:
      * Abstention compliance (exact negative keywords for unanswerable questions)
      * Formal citation syntax ([doc_id, p.<page>] or [doc_id, <section>])
      * Lexical and factual alignment with reference answer
@@ -69,7 +71,7 @@ def deterministic_score_answer(
     is_unanswerable: bool = False,
     source_doc: str | None = None,
 ) -> dict[str, Any]:
-    """Score an answer using deterministic rubric for correctness, faithfulness, and citations."""
+    """Score an answer using deterministic rubric (smoke-test only)."""
     lower_ans = answer.lower()
     abstained = (
         "don't know" in lower_ans
@@ -77,6 +79,7 @@ def deterministic_score_answer(
         or "cannot find" in lower_ans
         or "does not contain" in lower_ans
         or "no mention" in lower_ans
+        or "does not mention" in lower_ans
     )
 
     # Citation check: [doc_id, p.<page>] or [doc_id, <section>]
@@ -102,7 +105,7 @@ def deterministic_score_answer(
             correctness = 0
             faithfulness = 1
             citation_score = 0.0
-            critique = "Spurious abstention on answerable query."
+            critique = "Spurious abstention (over-abstention) on answerable query."
         else:
             ref_words = set(re.findall(r"\w+", reference.lower()))
             ans_words = set(re.findall(r"\w+", answer.lower()))
@@ -122,7 +125,7 @@ def deterministic_score_answer(
             citation_score = 1.0 if citation_correct else 0.0
 
     return {
-        "judge_method": "deterministic_rubric",
+        "judge_method": "deterministic_rubric (smoke-test only)",
         "correctness": correctness,
         "faithfulness": faithfulness,
         "abstention_ok": abstention_ok,
@@ -139,13 +142,12 @@ def llm_score_answer(
     context: str,
     answer: str,
     is_unanswerable: bool = False,
-    judge_model: str = "gpt-4o-mini",
-    judge_base_url: str = "https://api.openai.com/v1",
+    judge_model: str = "meta-llama/Llama-3.1-8B-Instruct",
+    judge_base_url: str = "http://localhost:8000/v1",
     judge_api_key: str | None = None,
 ) -> dict[str, Any]:
-    """Score using configurable frontier LLM judge via OpenAI-compatible endpoint."""
-    if not judge_api_key:
-        raise ValueError("judge_api_key must be provided for LLM-based judging.")
+    """Score using configurable OpenAI-compatible LLM judge (e.g. vLLM droplet server)."""
+    api_key = judge_api_key or "EMPTY"
 
     prompt_content = f"""
 Question: {question}
@@ -157,7 +159,7 @@ Retrieved Context:
 Generated Model Answer to Evaluate:
 {answer}
 """
-    headers = {"Authorization": f"Bearer {judge_api_key}", "Content-Type": "application/json"}
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
     payload = {
         "model": judge_model,
         "messages": [
@@ -190,7 +192,7 @@ Generated Model Answer to Evaluate:
 
 def score_record(
     record: dict[str, Any],
-    judge_model: str = "deterministic",
+    judge_model: str = "meta-llama/Llama-3.1-8B-Instruct",
     judge_base_url: str | None = None,
     judge_api_key: str | None = None,
 ) -> dict[str, Any]:
@@ -204,7 +206,7 @@ def score_record(
     is_unans = record.get("type") == "unanswerable"
     source_doc = record.get("source_doc")
 
-    if judge_model != "deterministic" and judge_api_key:
+    if judge_model not in ("deterministic", "deterministic_rubric", "smoke-test"):
         try:
             return llm_score_answer(
                 question=question,
@@ -213,11 +215,11 @@ def score_record(
                 answer=answer,
                 is_unanswerable=is_unans,
                 judge_model=judge_model,
-                judge_base_url=judge_base_url or "https://api.openai.com/v1",
-                judge_api_key=judge_api_key,
+                judge_base_url=judge_base_url or "http://localhost:8000/v1",
+                judge_api_key=judge_api_key or "EMPTY",
             )
         except Exception as exc:
-            logger.warning("Frontier judge failed (%s). Falling back to deterministic rubric.", exc)
+            logger.warning("LLM judge failed (%s). Falling back to deterministic rubric (smoke-test only).", exc)
 
     return deterministic_score_answer(
         question=question,
@@ -233,11 +235,12 @@ def judge_saved_answers(
     raw_answers_path: Path,
     judged_output_path: Path,
     sample_review_path: Path | None = None,
-    judge_model: str = "deterministic",
+    judge_model: str = "meta-llama/Llama-3.1-8B-Instruct",
     judge_base_url: str | None = None,
     judge_api_key: str | None = None,
     sample_pct: float = 0.20,
     seed: int = 42,
+    top_k: int | None = None,
 ) -> dict[str, Any]:
     """Score all records in raw_answers.jsonl without regenerating model answers."""
     with open(raw_answers_path, encoding="utf-8") as f:
@@ -286,6 +289,7 @@ def judge_saved_answers(
                     "source_doc": item.get("source_doc"),
                     "reference_answer": item.get("reference_answer"),
                     "model_answer": item.get("model_answer"),
+                    "judge_method": item.get("judge_method"),
                     "judge_correctness": item.get("correctness"),
                     "judge_faithfulness": item.get("faithfulness"),
                     "judge_abstention_ok": item.get("abstention_ok"),
@@ -307,16 +311,42 @@ def judge_saved_answers(
     total = len(judged_records)
     avg_correctness = round(sum(r["correctness"] for r in judged_records) / total, 3) if total > 0 else 0
     avg_faithfulness = round(sum(r["faithfulness"] for r in judged_records) / total, 3) if total > 0 else 0
-    abstention_rate = round(sum(r["abstention_ok"] for r in judged_records) / total, 3) if total > 0 else 0
+    abstention_accuracy = round(sum(r["abstention_ok"] for r in judged_records) / total, 3) if total > 0 else 0
     citation_precision = round(sum(r.get("citation_score", 0) for r in judged_records) / total, 3) if total > 0 else 0
+
+    # Over-abstention rate: proportion of answerable questions where the model abstained spuriously
+    answerable_records = [r for r in judged_records if r.get("type") != "unanswerable"]
+    over_abstentions = sum(1 for r in answerable_records if r.get("abstention_ok") == 0)
+    over_abstention_rate = round(over_abstentions / len(answerable_records), 3) if answerable_records else 0.0
+
+    # Per-question-type breakdown
+    by_type_all: dict[str, list[dict]] = {}
+    for r in judged_records:
+        by_type_all.setdefault(r.get("type", "factual"), []).append(r)
+
+    type_breakdown: dict[str, dict[str, Any]] = {}
+    for q_type, q_records in sorted(by_type_all.items()):
+        cnt = len(q_records)
+        type_breakdown[q_type] = {
+            "count": cnt,
+            "mean_correctness_0_to_2": round(sum(r["correctness"] for r in q_records) / cnt, 3),
+            "faithfulness_rate": round(sum(r["faithfulness"] for r in q_records) / cnt, 3),
+            "abstention_accuracy": round(sum(r["abstention_ok"] for r in q_records) / cnt, 3),
+            "citation_precision": round(sum(r.get("citation_score", 0) for r in q_records) / cnt, 3),
+        }
+
+    judge_method_label = judged_records[0].get("judge_method", judge_model) if judged_records else judge_model
 
     return {
         "total_evaluated": total,
-        "judge_method": judge_model,
+        "judge_method": judge_method_label,
+        "top_k_used": top_k,
         "mean_correctness_0_to_2": avg_correctness,
         "faithfulness_rate": avg_faithfulness,
-        "abstention_accuracy": abstention_rate,
+        "abstention_accuracy": abstention_accuracy,
+        "over_abstention_rate": over_abstention_rate,
         "citation_precision": citation_precision,
+        "per_question_type_breakdown": type_breakdown,
     }
 
 
@@ -325,9 +355,10 @@ def main() -> None:
     parser.add_argument("--input", default="results/raw_answers.jsonl", help="Input raw answers JSONL")
     parser.add_argument("--out", default="results/judged_answers.jsonl", help="Output judged JSONL")
     parser.add_argument("--sample-out", default="results/manual_review_sample_20pct.jsonl", help="20 percent manual review sample")
-    parser.add_argument("--judge-model", default=os.getenv("JUDGE_MODEL", "deterministic"), help="deterministic | gpt-4o-mini | ...")
-    parser.add_argument("--judge-url", default=os.getenv("JUDGE_BASE_URL", "https://api.openai.com/v1"), help="OpenAI-compatible URL")
-    parser.add_argument("--judge-key", default=os.getenv("JUDGE_API_KEY"), help="API Key for judge LLM")
+    parser.add_argument("--judge-model", default=os.getenv("JUDGE_MODEL", "meta-llama/Llama-3.1-8B-Instruct"), help="meta-llama/Llama-3.1-8B-Instruct | deterministic")
+    parser.add_argument("--judge-url", default=os.getenv("JUDGE_BASE_URL", "http://localhost:8000/v1"), help="OpenAI-compatible URL (droplet vLLM)")
+    parser.add_argument("--judge-key", default=os.getenv("JUDGE_API_KEY", "EMPTY"), help="API Key for judge LLM")
+    parser.add_argument("--top-k", type=int, default=3, help="Top-K context chunks used")
     args = parser.parse_args()
 
     results = judge_saved_answers(
@@ -337,18 +368,26 @@ def main() -> None:
         judge_model=args.judge_model,
         judge_base_url=args.judge_url,
         judge_api_key=args.judge_key,
+        top_k=args.top_k,
     )
-    print("\n" + "=" * 55)
+    print("\n" + "=" * 65)
     print("JUDGE EVALUATION SUMMARY")
-    print("=" * 55)
+    print("=" * 65)
     print(f"Total Evaluated:        {results['total_evaluated']}")
     print(f"Judge Model/Method:     {results['judge_method']}")
+    print(f"Top-K Used:             {results['top_k_used']}")
     print(f"Mean Correctness (0-2): {results['mean_correctness_0_to_2']} / 2.0")
     print(f"Faithfulness Rate:      {results['faithfulness_rate']:.1%}")
     print(f"Abstention Accuracy:    {results['abstention_accuracy']:.1%}")
+    print(f"Over-Abstention Rate:   {results['over_abstention_rate']:.1%}")
     print(f"Citation Precision:     {results['citation_precision']:.1%}")
-    print("=" * 55)
+    print("-" * 65)
+    print("Per-Question-Type Breakdown:")
+    for q_type, tb in results["per_question_type_breakdown"].items():
+        print(f"  [{q_type:<14}] n={tb['count']:<2} | Corr: {tb['mean_correctness_0_to_2']:.2f}/2.0 | Faith: {tb['faithfulness_rate']:.1%} | Abstain: {tb['abstention_accuracy']:.1%} | Cit: {tb['citation_precision']:.1%}")
+    print("=" * 65)
 
 
 if __name__ == "__main__":
     main()
+

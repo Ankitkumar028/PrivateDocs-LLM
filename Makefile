@@ -1,4 +1,4 @@
-.PHONY: help setup-local up-local down-local ingest smoke-local test lint eval-retrieval eval-answers loadtest report gpu-up gpu-sync
+.PHONY: help setup-local up-local down-local ingest smoke-local test lint eval-retrieval eval-answers loadtest report gpu-up gpu-sync gpu-dryrun
 
 PYTHON ?= python3
 VENV ?= .venv
@@ -18,6 +18,8 @@ help:
 	@echo "  make report          - Generate benchmark and evaluation reports"
 	@echo "  make gpu-up          - Start GPU Docker stack on AMD droplet"
 	@echo "  make gpu-sync        - Commit and sync results from droplet"
+	@echo "  make gpu-dryrun      - Dry-run GPU scripts (bash -n, shellcheck, stubbed docker)"
+
 
 setup-local:
 	@if command -v uv >/dev/null 2>&1; then \
@@ -94,3 +96,17 @@ gpu-up:
 
 gpu-sync:
 	bash scripts/gpu/04_sync_results.sh
+
+gpu-dryrun:
+	@echo "=== 1. Checking bash syntax (bash -n) ==="
+	bash -n scripts/gpu/*.sh
+	@echo "=== 2. Checking scripts with shellcheck (if available) ==="
+	@if command -v shellcheck >/dev/null 2>&1; then \
+		shellcheck scripts/gpu/*.sh; \
+	else \
+		echo "shellcheck not found on PATH, skipping linting."; \
+	fi
+	@echo "=== 3. Running stubbed Docker workflow ==="
+	bash scripts/gpu/test_stubbed_docker.sh
+	@echo "GPU dryrun completed successfully."
+

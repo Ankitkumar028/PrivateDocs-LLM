@@ -1,8 +1,40 @@
 {
   "total_evaluated": 40,
-  "judge_method": "deterministic",
+  "judge_method": "deterministic_rubric (smoke-test only)",
+  "top_k_used": 3,
   "mean_correctness_0_to_2": 1.8,
   "faithfulness_rate": 1.0,
   "abstention_accuracy": 1.0,
-  "citation_precision": 0.275
+  "over_abstention_rate": 0.0,
+  "citation_precision": 0.25,
+  "per_question_type_breakdown": {
+    "factual": {
+      "count": 16,
+      "mean_correctness_0_to_2": 1.688,
+      "faithfulness_rate": 1.0,
+      "abstention_accuracy": 1.0,
+      "citation_precision": 0.125
+    },
+    "multi_chunk": {
+      "count": 10,
+      "mean_correctness_0_to_2": 2.0,
+      "faithfulness_rate": 1.0,
+      "abstention_accuracy": 1.0,
+      "citation_precision": 0.0
+    },
+    "numeric": {
+      "count": 8,
+      "mean_correctness_0_to_2": 1.625,
+      "faithfulness_rate": 1.0,
+      "abstention_accuracy": 1.0,
+      "citation_precision": 0.25
+    },
+    "unanswerable": {
+      "count": 6,
+      "mean_correctness_0_to_2": 2.0,
+      "faithfulness_rate": 1.0,
+      "abstention_accuracy": 1.0,
+      "citation_precision": 1.0
+    }
+  }
 }

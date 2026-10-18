@@ -5,15 +5,45 @@
 providers:
   openai:
     gpt-4o:
+      name: "OpenAI GPT-4o (Omni)"
       input_per_million: 2.50
       output_per_million: 10.00
+      price_date: "2026-10"
+      source_url: "https://openai.com/api/pricing/"
+      status: "active"
     gpt-4o-mini:
+      name: "OpenAI GPT-4o-mini"
       input_per_million: 0.15
       output_per_million: 0.60
+      price_date: "2026-10"
+      source_url: "https://openai.com/api/pricing/"
+      status: "active"
+    gpt-3.5-turbo:
+      name: "OpenAI GPT-3.5 Turbo (Legacy)"
+      input_per_million: 0.50
+      output_per_million: 1.50
+      price_date: "2024-02"
+      source_url: "https://platform.openai.com/docs/deprecations"
+      status: "flagged_retired"
   anthropic:
     claude-3-5-sonnet:
+      name: "Anthropic Claude 3.5 Sonnet"
       input_per_million: 3.00
       output_per_million: 15.00
+      price_date: "2026-10"
+      source_url: "https://www.anthropic.com/pricing"
+      status: "active"
     claude-3-5-haiku:
+      name: "Anthropic Claude 3.5 Haiku"
       input_per_million: 0.80
       output_per_million: 4.00
+      price_date: "2026-10"
+      source_url: "https://www.anthropic.com/pricing"
+      status: "active"
+    claude-3-opus:
+      name: "Anthropic Claude 3 Opus (Previous Gen)"
+      input_per_million: 15.00
+      output_per_million: 75.00
+      price_date: "2024-03"
+      source_url: "https://www.anthropic.com/pricing"
+      status: "flagged_retired"

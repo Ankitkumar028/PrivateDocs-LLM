@@ -71,7 +71,7 @@ class CPUTextEmbedder:
             vec = [x / norm for x in vec]
         return vec
 
-    def embed_texts(self, texts: list[str]) -> list[list[float]]:
+    def embed_texts(self, texts: list[str], batch_size: int = 64) -> list[list[float]]:
         """Embed a batch of text documents."""
         if not texts:
             return []
@@ -81,6 +81,7 @@ class CPUTextEmbedder:
             try:
                 embeddings = self._model.encode(
                     texts,
+                    batch_size=batch_size,
                     convert_to_numpy=True,
                     normalize_embeddings=True,
                     show_progress_bar=False,
